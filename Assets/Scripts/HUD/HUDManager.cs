@@ -16,13 +16,7 @@ public class HUDManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//eventPanelController.ShowEventWithoutOptions("Event without options", eventTextTimeOnScreen);
 
-		List<string> options = new List<string>();
-		options.Add("Una");
-		options.Add("Dos");
-		options.Add("Tres");
-		eventPanelController.ShowEventWithOptions("Event with options", options);
 	}
 	
 	// Update is called once per frame
@@ -34,7 +28,37 @@ public class HUDManager : MonoBehaviour {
 
 	#region Public Methods
 
+	public void SetValue(ResourceType type, int value){
+		switch(type){
+			case ResourceType.BOOTY:
+				topPanelController.SetGoldValue(value);
+			break;
+			case ResourceType.CREW:
+				topPanelController.SetPeopleValue(value);
+			break;
+			case ResourceType.FOOD:
+				topPanelController.SetFoodValue(value);
+			break;
+			case ResourceType.GUNS:
+				topPanelController.SetCannonValue(value);
+			break;
+			case ResourceType.PIECES:
+				topPanelController.SetWoodValue(value);
+			break;
+			case ResourceType.RUM:
+				topPanelController.SetRumValue(value);
+			break;
+			default: break;
+		}
+	}
 
+	public void ShowEvent(string text, List<string> options){
+		if (options.Count > 0){
+			eventPanelController.ShowEventWithOptions(text, options);
+		} else {
+			eventPanelController.ShowEventWithoutOptions(text, eventTextTimeOnScreen);
+		}
+	}
 
 	#endregion
 
