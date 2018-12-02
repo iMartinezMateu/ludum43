@@ -23,6 +23,14 @@ public class MenuController : MonoBehaviour {
 		
 	}
 
+	public void ChangeMusicVolume(float n){
+		GameManager.instance.musicVolume = n;
+	}
+
+	public void ChangeEffectsVolume(float n){
+		GameManager.instance.effectVolume = n;
+	}
+
 	public void ChangePanel(string scene){
 		switch(scene) {
 			case "main":
