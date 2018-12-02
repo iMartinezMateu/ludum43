@@ -5,9 +5,9 @@ using LitJson;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EventManager : MonoBehaviour {
-	[SerializeField]
-	private HUDManager hudManager;
+public class EventManager : MonoBehaviour
+{
+	public HUDManager hudManager;
 
 	private Event curGoodEvent;
 	private Event curBadEvent;

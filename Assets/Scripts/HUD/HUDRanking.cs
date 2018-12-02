@@ -8,8 +8,9 @@ public class HUDRanking : MonoBehaviour {
 
     private Animator rankingAnimator;
     public TextMeshProUGUI infoRankingText;
-    public TMP_InputField name;
+    public TMP_InputField playerName;
     private int gloryPoints; 
+
 	// Use this for initialization
 	void Start ()
     {
@@ -41,6 +42,6 @@ public class HUDRanking : MonoBehaviour {
     }
     private void SetText()
     {
-        infoRankingText.text = name.text + ":  " + gloryPoints +" Glory Points";
+        infoRankingText.text = playerName.text + ":  " + gloryPoints +" Glory Points";
     }
 }
