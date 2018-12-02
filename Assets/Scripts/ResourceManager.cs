@@ -2,6 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ResourceType
+{
+    BOOTY = 0,
+	PIECES,
+	CREW,
+	RUM,
+	FOOD,
+	GUNS
+}
+
 public class ResourceManager : MonoBehaviour
 {
 	public int booty = 0;

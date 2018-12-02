@@ -1,15 +1,5 @@
 ﻿using System;
 
-public enum ResourceType
-{
-    BOOTY = 0,
-	PIECES,
-	CREW,
-	RUM,
-	FOOD,
-	GUNS
-}
-
 public class Balance 
 {
 	public ResourceType type;
