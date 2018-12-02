@@ -5,11 +5,9 @@ using LitJson;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EventManager : MonoBehaviour {
-	[SerializeField]
-	private EventPanelController eventPanelController;
-	[SerializeField]
-	private int eventTextTimeOnScreen;
+public class EventManager : MonoBehaviour
+{
+	public HUDManager hudManager;
 
 	private Event curGoodEvent;
 	private Event curBadEvent;
@@ -37,7 +35,7 @@ public class EventManager : MonoBehaviour {
 	void InvokePositiveEvent() {
 			if (curGoodEvent.answers.Length < 2)
 			{
-				eventPanelController.ShowEventWithoutOptions(curGoodEvent.text, eventTextTimeOnScreen);
+				hudManager.ShowEvent(curGoodEvent.text, new List<string>());
 			}
 			else
 			{
@@ -46,7 +44,7 @@ public class EventManager : MonoBehaviour {
 				{
 					options.Add(answer.text);
 				}
-				eventPanelController.ShowEventWithOptions(curGoodEvent.text, options);
+				hudManager.ShowEvent(curGoodEvent.text, options);
 			}
 		
 		Invoke("InvokePositiveEvent", Random.Range(1,10)*curGoodEvent.appearanceProbability);
@@ -57,7 +55,7 @@ public class EventManager : MonoBehaviour {
 	void InvokeNegativeEvent() {
 			if (curBadEvent.answers.Length < 2)
 			{
-				eventPanelController.ShowEventWithoutOptions(curBadEvent.text, eventTextTimeOnScreen);	
+				hudManager.ShowEvent(curBadEvent.text, new List<string>());	
 			}
 			else
 			{
@@ -67,7 +65,7 @@ public class EventManager : MonoBehaviour {
 					options.Add(answer.text);
 				}
 
-				eventPanelController.ShowEventWithOptions(curBadEvent.text, options);
+				hudManager.ShowEvent(curBadEvent.text, options);
 			}
 		Invoke("InvokeNegativeEvent", Random.Range(1,10)*curBadEvent.appearanceProbability);
 
