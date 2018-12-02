@@ -18,6 +18,8 @@ public class TopPanelController : MonoBehaviour {
 	private Slider cannonSlider;
 	[SerializeField]
 	private Slider peopleSlider;
+	
+	#region Unity Methods
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +31,34 @@ public class TopPanelController : MonoBehaviour {
 		
 	}
 
-	
+	#endregion
+
+	#region Public Methods
+
+	public void SetGoldValue(int v){
+		goldText.text = v.ToString();
+	}
+
+	public void SetFoodValue(float v){
+		foodSlider.value = v;
+	}
+
+	public void SetWoodValue(float v){
+		woodSlider.value = v;
+	}
+
+	public void SetRumValue(float v){
+		rumSlider.value = v;
+	}
+
+	public void SetCannonValue(float v){
+		cannonSlider.value = v;
+	}
+
+	public void SetPeopleValue(float v){
+		cannonSlider.value = v;
+	}
+
+	#endregion
 	
 }
