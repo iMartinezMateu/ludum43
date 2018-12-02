@@ -9,15 +9,15 @@ public class TopPanelController : MonoBehaviour {
 	[SerializeField]
 	private TextMeshProUGUI goldText;
 	[SerializeField]
-	private Slider foodSlider;
+	private TextMeshProUGUI foodText;
 	[SerializeField]
-	private Slider rumSlider;
+	private TextMeshProUGUI rumText;
 	[SerializeField]
-	private Slider woodSlider;
+	private TextMeshProUGUI woodText;
 	[SerializeField]
-	private Slider cannonSlider;
+	private TextMeshProUGUI cannonText;
 	[SerializeField]
-	private Slider peopleSlider;
+	private TextMeshProUGUI peopleText;
 	
 	#region Unity Methods
 
@@ -39,24 +39,24 @@ public class TopPanelController : MonoBehaviour {
 		goldText.text = v.ToString();
 	}
 
-	public void SetFoodValue(float v){
-		foodSlider.value = v;
+	public void SetFoodValue(int v){
+		foodText.text = v.ToString();
 	}
 
-	public void SetWoodValue(float v){
-		woodSlider.value = v;
+	public void SetWoodValue(int v){
+		rumText.text = v.ToString();
 	}
 
-	public void SetRumValue(float v){
-		rumSlider.value = v;
+	public void SetRumValue(int v){
+		woodText.text = v.ToString();
 	}
 
-	public void SetCannonValue(float v){
-		cannonSlider.value = v;
+	public void SetCannonValue(int v){
+		cannonText.text = v.ToString();
 	}
 
-	public void SetPeopleValue(float v){
-		cannonSlider.value = v;
+	public void SetPeopleValue(int v){
+		peopleText.text = v.ToString();
 	}
 
 	#endregion
