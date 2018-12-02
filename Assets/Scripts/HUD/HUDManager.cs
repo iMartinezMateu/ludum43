@@ -60,6 +60,14 @@ public class HUDManager : MonoBehaviour {
 		}
 	}
 
+	public void AddClickEventOption(EventPanelController.ClickEventOption ev){
+		eventPanelController.OnClickEventOption += ev;
+	}
+
+	public void RemoveClickEventOption(EventPanelController.ClickEventOption ev){
+		eventPanelController.OnClickEventOption -= ev;
+	}
+
 	#endregion
 
 }

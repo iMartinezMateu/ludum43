@@ -16,6 +16,9 @@ public class EventPanelController : MonoBehaviour {
 	[SerializeField]
 	private TextMeshProUGUI[] signTexts;
 
+	public delegate void ClickEventOption(int o);
+	public event ClickEventOption OnClickEventOption = delegate { };
+
 	#region Unity Methods
 
 	// Use this for initialization
@@ -57,6 +60,10 @@ public class EventPanelController : MonoBehaviour {
 		for (int i = 0; i < signAnimators.Length; i++) {
 			signAnimators[0].SetBool("Show", false);
 		}
+	}
+
+	public void HUDClickEventOption(int o){
+		OnClickEventOption(o);
 	}
 
 	#endregion
