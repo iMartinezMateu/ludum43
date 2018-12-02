@@ -32,7 +32,7 @@ public class Ship : MonoBehaviour {
         foreach (SpriteRenderer r in sprites)
             r.gameObject.SetActive(false);
 
-        if (integrity >= 0.9f)
+        if (integrity >= 0.7f)
         {
             canon1.gameObject.SetActive(true);
             canon2.gameObject.SetActive(true);
@@ -40,7 +40,7 @@ public class Ship : MonoBehaviour {
             mast.gameObject.SetActive(true);
             sail.gameObject.SetActive(true);
         }
-        else if (integrity >= 0.5f)
+        else if (integrity >= 0.4f)
         {
             canon1.gameObject.SetActive(true);
             crack1.gameObject.SetActive(true);
@@ -50,7 +50,7 @@ public class Ship : MonoBehaviour {
             mast.gameObject.SetActive(true);
             sail.gameObject.SetActive(true);
         }
-        else if (integrity >= 0.3f)
+        else if (integrity >= 0.2f)
         {
             crack1.gameObject.SetActive(true);
             canon2.gameObject.SetActive(true);
@@ -58,6 +58,8 @@ public class Ship : MonoBehaviour {
             crack3.gameObject.SetActive(true);
             mast.gameObject.SetActive(true);
             sailBroken.gameObject.SetActive(true);
+
+            if (Log.instance) Log.instance.ShowMessage("We need more wood t' keep this afloat");
         }
         else if (integrity >= 0)
         {
@@ -66,6 +68,8 @@ public class Ship : MonoBehaviour {
             crack2.gameObject.SetActive(true);
             crack3.gameObject.SetActive(true);
             mastBroken.gameObject.SetActive(true);
+
+            if (Log.instance) Log.instance.ShowMessage("We sink!");
         }
     }
 }

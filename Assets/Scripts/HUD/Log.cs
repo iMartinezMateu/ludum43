@@ -22,13 +22,10 @@ public class Log : MonoBehaviour {
     public void ShowMessage(string message)
     {
         queue.Enqueue(message);
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).ToString());
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Log_anim"))
         {
             Next();
         }
-        else
-            Debug.Log("Playing");
     }
 
     public void Next()
@@ -43,5 +40,9 @@ public class Log : MonoBehaviour {
     public void Test()
     {
         ShowMessage("Al abordaje");
+    }
+    public void Test2()
+    {
+        ShowMessage("A los cañones");
     }
 }

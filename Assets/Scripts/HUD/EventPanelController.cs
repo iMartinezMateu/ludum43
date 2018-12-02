@@ -44,6 +44,7 @@ public class EventPanelController : MonoBehaviour {
 	IEnumerator HideEventWithoutOptions(int time){
 		yield return new WaitForSeconds(time);
 		eventAnimator.SetBool("ShowWithoutEvents", false);
+		OnClickEventOption(-1);
 	}
 
 	public void ShowEventWithOptions(string text, List<string> options){
@@ -58,13 +59,13 @@ public class EventPanelController : MonoBehaviour {
 	public void HideEventWithOptions(){
 		eventAnimator.SetBool("ShowWithEvents", false);
 		for (int i = 0; i < signAnimators.Length; i++) {
-			signAnimators[0].SetBool("Show", false);
+			signAnimators[i].SetBool("Show", false);
 		}
 	}
 
 	public void HUDClickEventOption(int o){
-		OnClickEventOption(o);
 		HideEventWithOptions();
+		OnClickEventOption(o);
 	}
 
 	#endregion

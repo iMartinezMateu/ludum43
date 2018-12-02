@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - BackGorundFijo
+  - Mar1
+  - Barco
+  - Mar2
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Mar1
+    uniqueID: 1223450113
+    locked: 0
+  - name: Barco
+    uniqueID: 2646577549
+    locked: 0
+  - name: Mar2
+    uniqueID: 2748958383
+    locked: 0
+  - name: BackGroundFijo
+    uniqueID: 3482400747
     locked: 0
