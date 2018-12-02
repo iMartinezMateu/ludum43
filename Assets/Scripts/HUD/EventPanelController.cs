@@ -64,6 +64,7 @@ public class EventPanelController : MonoBehaviour {
 
 	public void HUDClickEventOption(int o){
 		OnClickEventOption(o);
+		HideEventWithOptions();
 	}
 
 	#endregion

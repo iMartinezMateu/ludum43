@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ResourceType
-{
-    BOOTY = 0,
+public enum ResourceType {
+	BOOTY = 0,
 	PIECES,
 	CREW,
 	RUM,
@@ -12,116 +11,127 @@ public enum ResourceType
 	GUNS
 }
 
-public class ResourceManager : MonoBehaviour
-{
-	public int booty = 0;
-	public int pieces = 0;
-	public int crew = 0;
-	public int rum = 0;
-	public int food = 0;
-	public int guns = 0;
+public class ResourceManager : MonoBehaviour {
+	
+	private int booty = 0;
+	private int pieces = 0;
+	private int crew = 0;
+	private int rum = 0;
+	private int food = 0;
+	private int guns = 0;
 
-	public int happiness = 0;
-	public int buoyancy = 0;
-	public int power = 0;
+	private int happiness = 0;
+	private int buoyancy = 0;
+	private int power = 0;
 
-	int GetBootyValue()
-	{
-		return booty;
+	#region Unity methods
+
+	// Use this for initialization
+	void Start () {
+
 	}
 
-	int GetPiecesValue()
-	{
-		return pieces;
+	// Update is called once per frame
+	void Update () {
+
 	}
 
-	int GetCrewValue()
-	{
-		return crew;
+	#endregion
+
+	#region public methods
+
+	public int Booty {
+		get {
+			return booty;
+		}
+		set {
+			booty = value;
+		}
 	}
 
-	int GetRumValue()
-	{
-		return rum;
+	public int Pieces {
+		get {
+			return pieces;
+		}
+		set {
+			pieces = value;
+			UpdateBuoyancy ();
+		}
 	}
 
-	int GetFoodValue()
-	{
-		return food;
+	public int Crew {
+		get {
+			return crew;
+		}
+		set {
+			crew = value;
+			UpdateHappiness ();
+			UpdateBuoyancy ();
+		}
 	}
 
-	int GetGunsValue()
-	{
-		return guns;
+	public int Rum {
+		get {
+			return rum;
+		}
+		set {
+			rum = value;
+			UpdateHappiness ();
+		}
 	}
 
-	int GetHappinessValue()
-	{
+	public int Food {
+		get {
+			return food;
+		}
+		set {
+			food = value;
+			UpdateHappiness ();
+		}
+	}
+
+	public int Guns {
+		get {
+			return guns;
+		}
+		set {
+			guns = value;
+			UpdateBuoyancy ();
+		}
+	}
+
+	void UpdateHappiness () {
+		int crewMultiplier = 1;
+		int foodMultiplier = 3;
+		int rumMultiplier = 5;
+		happiness = (food * foodMultiplier + rum * rumMultiplier) / (crew * crewMultiplier + food * foodMultiplier + rum * rumMultiplier);
+	}
+
+	void UpdateBuoyancy () {
+		int piecesMultiplier = 10;
+		int crewMultiplier = 2;
+		int gunMultiplier = 1;
+		buoyancy = (pieces * piecesMultiplier) / (pieces * piecesMultiplier + crew * crewMultiplier + guns * gunMultiplier);
+	}
+
+	void UpdatePower () {
+		int crewMultiplier = 1;
+		int gunMultiplier = 3;
+		power = crew * crewMultiplier + guns * gunMultiplier;
+	}
+
+	int GetHappinessValue () {
 		return happiness;
 	}
 
-	int GetBuoyancyValue()
-	{
+	int GetBuoyancyValue () {
 		return buoyancy;
 	}
 
-	int GetPowerValue()
-	{
+	int GetPowerValue () {
 		return power;
 	}
 	
-	void UpdateBooty(int value)
-	{
-		booty = value;
-	}
+	#endregion
 
-	void UpdatePieces(int value)
-	{
-		pieces = value;
-	}
-
-	void UpdateCrew(int value)
-	{
-		crew = value;
-	}
-
-	void UpdateRum(int value)
-	{
-		rum = value;
-	}
-
-	void UpdateFood(int value)
-	{
-		food = value;
-	}
-
-	void UpdateGuns(int value)
-	{
-		guns = value;
-	}
-
-	void UpdateHappiness(int value)
-	{
-		happiness = value;
-	}
-
-	void UpdateBuoyancy(int value)
-	{
-		buoyancy = value;
-	}
-
-	void UpdatePower(int value)
-	{
-		power = value;
-	}
-	
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
