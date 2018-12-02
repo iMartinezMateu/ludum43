@@ -32,7 +32,7 @@ public class Ship : MonoBehaviour {
         foreach (SpriteRenderer r in sprites)
             r.gameObject.SetActive(false);
 
-        if (integrity > 0.9f)
+        if (integrity >= 0.9f)
         {
             canon1.gameObject.SetActive(true);
             canon2.gameObject.SetActive(true);
@@ -40,7 +40,7 @@ public class Ship : MonoBehaviour {
             mast.gameObject.SetActive(true);
             sail.gameObject.SetActive(true);
         }
-        else if (integrity > 0.5f)
+        else if (integrity >= 0.5f)
         {
             canon1.gameObject.SetActive(true);
             crack1.gameObject.SetActive(true);
@@ -50,7 +50,7 @@ public class Ship : MonoBehaviour {
             mast.gameObject.SetActive(true);
             sail.gameObject.SetActive(true);
         }
-        else if (integrity > 0.3f)
+        else if (integrity >= 0.3f)
         {
             crack1.gameObject.SetActive(true);
             canon2.gameObject.SetActive(true);
@@ -59,7 +59,7 @@ public class Ship : MonoBehaviour {
             mast.gameObject.SetActive(true);
             sailBroken.gameObject.SetActive(true);
         }
-        else if (integrity > 0)
+        else if (integrity >= 0)
         {
             crack1.gameObject.SetActive(true);
             canon2.gameObject.SetActive(true);
