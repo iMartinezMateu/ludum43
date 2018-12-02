@@ -60,22 +60,22 @@ public class EventManager : MonoBehaviour
 			switch (balance.type)
 			{
 				case ResourceType.RUM:
-					resourceManager.rum +=balance.quantity;
+					resourceManager.Rum +=balance.quantity;
 					break;
 				case ResourceType.CREW:
-					resourceManager.crew += balance.quantity;
+					resourceManager.Crew += balance.quantity;
 					break;
 				case ResourceType.FOOD:
-					resourceManager.food += balance.quantity;
+					resourceManager.Food += balance.quantity;
 					break;
 				case ResourceType.GUNS:
-					resourceManager.guns += balance.quantity;
+					resourceManager.Guns += balance.quantity;
 					break;
 				case ResourceType.BOOTY:
-					resourceManager.booty += balance.quantity;
+					resourceManager.Booty += balance.quantity;
 					break;
 				case ResourceType.PIECES:
-					resourceManager.pieces += balance.quantity;
+					resourceManager.Pieces += balance.quantity;
 					break;
 			}
 		}
@@ -87,22 +87,22 @@ public class EventManager : MonoBehaviour
 			switch (balance.type)
 			{
 				case ResourceType.RUM:
-					resourceManager.rum +=balance.quantity;
+					resourceManager.Rum +=balance.quantity;
 					break;
 				case ResourceType.CREW:
-					resourceManager.crew += balance.quantity;
+					resourceManager.Crew += balance.quantity;
 					break;
 				case ResourceType.FOOD:
-					resourceManager.food += balance.quantity;
+					resourceManager.Food += balance.quantity;
 					break;
 				case ResourceType.GUNS:
-					resourceManager.guns += balance.quantity;
+					resourceManager.Guns += balance.quantity;
 					break;
 				case ResourceType.BOOTY:
-					resourceManager.booty += balance.quantity;
+					resourceManager.Booty += balance.quantity;
 					break;
 				case ResourceType.PIECES:
-					resourceManager.pieces += balance.quantity;
+					resourceManager.Pieces += balance.quantity;
 					break;
 			}
 		}
