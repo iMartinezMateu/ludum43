@@ -56,6 +56,7 @@ MonoBehaviour:
   secondsBetweenEvents: 5
   badEventsProbability: 70
   normalEventsBetweenFatalEvents: 3
+  foodLostInEveryEvent: 1
   happinessThreshold: 20
   buoyancyThreshold: 20
   foodThreshold: 20

@@ -26,6 +26,7 @@ public class EventManager : MonoBehaviour {
 	[NonSerialized]
 	public int arrrrCounter;
 
+	private int currentEventArrrrIndex = 0;
 	private int betweenFatalEventsCounter = -1;
 
 	[SerializeField]
@@ -34,6 +35,8 @@ public class EventManager : MonoBehaviour {
 	private int badEventsProbability;
 	[SerializeField]
 	private int normalEventsBetweenFatalEvents;
+	[SerializeField]
+	private int foodLostInEveryEvent;
 	[SerializeField]
 	private int happinessThreshold;
 	[SerializeField]
@@ -86,16 +89,24 @@ public class EventManager : MonoBehaviour {
 		} else {
 			yield return new WaitForSeconds (secondsBetweenEvents);
 
+			int negativeCount = 0;
 			List<string> options = new List<string> ();
 			foreach (EventAnswer answer in currentEvent.answers) {
 				string answerText = answer.text;
-				if (checkNegativeBalances(answer)) answerText += "[disabled]";
+				if (checkNegativeBalances(answer)) {
+					answerText += "[disabled]";
+					negativeCount++;
+				}
 				options.Add (answerText);
+			}
+
+			if (options.Count == negativeCount){
+				GameObject.FindObjectOfType<HUDManager>().ShowRanking();
 			}
 
 			if (options.Count > 1){
 				int arrrrAnswer = findArrrrAnswer();
-
+				currentEventArrrrIndex = arrrrAnswer;
 				options[arrrrAnswer] += "[arrrr]";
 			}
 
@@ -107,6 +118,9 @@ public class EventManager : MonoBehaviour {
 
 	private void OnTriggerActionButton (int n) {
 		ProcessResources (currentEvent.answers[n]);
+		if (n == currentEventArrrrIndex) {
+			arrrrCounter++;
+		}
 		StartCoroutine (InvokeEvent ());
 	}
 
@@ -138,6 +152,10 @@ public class EventManager : MonoBehaviour {
 	}
 
 	private void ProcessResources (EventAnswer ea) {
+		//Food lost in Every Event
+		resourceManager.Food -= foodLostInEveryEvent;
+		hudManager.SetValue (ResourceType.FOOD, resourceManager.Food);
+		//More
 		foreach (Balance balance in ea.balances) {
 			switch (balance.type) {
 				case ResourceType.RUM:

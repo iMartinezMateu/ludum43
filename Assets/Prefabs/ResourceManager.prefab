@@ -52,7 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hudManager: {fileID: 0}
-  booty: 0
+  particleManager: {fileID: 0}
+  booty: 50
   pieces: 50
   crew: 50
   rum: 50
