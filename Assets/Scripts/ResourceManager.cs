@@ -13,6 +13,7 @@ public enum ResourceType {
 
 public class ResourceManager : MonoBehaviour {
 	public HUDManager hudManager;
+    public ParticleManager particleManager;
 
 	[SerializeField]
 	private int booty = 0;
@@ -64,9 +65,14 @@ public class ResourceManager : MonoBehaviour {
 			return booty;
 		}
 		set {
-			booty = value;
-			if (booty < 0) booty = 0;
-			else if (booty > 999) booty = 999;
+            if (value < booty)
+                particleManager.PlayParticle(0, -1);
+            else if (value > booty)
+                particleManager.PlayParticle(0, 1);
+            booty = value;
+            
+            if (booty < 0) booty = 0;
+                else if (booty > 999) booty = 999;
 		}
 	}
 
@@ -75,8 +81,13 @@ public class ResourceManager : MonoBehaviour {
 			return pieces;
 		}
 		set {
-			pieces = value;
-			if (pieces < 0) pieces = 0;
+            if (value < pieces)
+                particleManager.PlayParticle(3, -1);
+            else if (value > pieces)
+                particleManager.PlayParticle(3, 1);
+
+            pieces = value;
+            if (pieces < 0) pieces = 0;
 			else if (pieces > 999) pieces = 999;
 			UpdateBuoyancy ();
 		}
@@ -87,8 +98,13 @@ public class ResourceManager : MonoBehaviour {
 			return crew;
 		}
 		set {
-			crew = value;
-			if (crew < 0) crew = 0;
+            if (value < crew)
+                particleManager.PlayParticle(5, -1);
+            else if (value > crew)
+                particleManager.PlayParticle(5, 1);
+
+            crew = value;
+            if (crew < 0) crew = 0;
 			else if (crew > 999) crew = 999;
 			UpdateHappiness ();
 			UpdateBuoyancy ();
@@ -101,8 +117,14 @@ public class ResourceManager : MonoBehaviour {
 			return rum;
 		}
 		set {
-			rum = value;
-			if (rum < 0) rum = 0;
+            if (value < rum)
+                particleManager.PlayParticle(2, -1);
+            else if (value > rum)
+                particleManager.PlayParticle(2, 1);
+
+            rum = value;
+
+            if (rum < 0) rum = 0;
 			else if (rum > 999) rum = 999;
 			UpdateHappiness ();
 		}
@@ -113,8 +135,14 @@ public class ResourceManager : MonoBehaviour {
 			return food;
 		}
 		set {
-			food = value;
-			if (food < 0) food = 0;
+            if (value < food)
+                particleManager.PlayParticle(1, -1);
+            else if (value > food)
+                particleManager.PlayParticle(1, 1);
+
+            food = value;
+
+            if (food < 0) food = 0;
 			else if (food > 999) food = 999;
 			UpdateHappiness ();
 		}
@@ -125,8 +153,14 @@ public class ResourceManager : MonoBehaviour {
 			return guns;
 		}
 		set {
-			guns = value;
-			if (guns < 0) guns = 0;
+            if (value < guns)
+                particleManager.PlayParticle(4, -1);
+            else if (value > guns)
+                particleManager.PlayParticle(4, 1);
+
+            guns = value;
+
+            if (guns < 0) guns = 0;
 			else if (guns > 999) guns = 999;
 			UpdateBuoyancy ();
 			UpdatePower ();
