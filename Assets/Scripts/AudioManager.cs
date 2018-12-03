@@ -16,6 +16,13 @@ public class AudioManager : MonoBehaviour {
         if (!instance) instance = this;
     }
 
+    private void Update()
+    {
+        ambientSource.volume = GameManager.instance.effectVolume;
+        fxSource.volume = GameManager.instance.effectVolume;
+        musicSource.volume = GameManager.instance.musicVolume;
+    }
+
 
     /// <summary>
     /// Inicia nuevo sonido ambiente
