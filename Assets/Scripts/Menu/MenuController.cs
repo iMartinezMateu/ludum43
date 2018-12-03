@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MenuController : MonoBehaviour {
+public class MenuController : MonoBehaviour
+{
 
+	public Slider effectVolume;
+
+	public Slider musicVolume;
+	
 	[SerializeField]
 	private GameObject mainPanel;
 	[SerializeField]
@@ -14,8 +20,10 @@ public class MenuController : MonoBehaviour {
 	private GameObject creditsPanel;
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{		
+		effectVolume.value = PlayerPrefs.GetFloat("EffectsVolume",0.5f);
+		musicVolume.value = PlayerPrefs.GetFloat("MusicVolume",0.5f);
 	}
 	
 	// Update is called once per frame
@@ -25,10 +33,15 @@ public class MenuController : MonoBehaviour {
 
 	public void ChangeMusicVolume(float n){
 		GameManager.instance.musicVolume = n;
+		PlayerPrefs.SetFloat("MusicVolume",n);
+		PlayerPrefs.Save();
 	}
 
 	public void ChangeEffectsVolume(float n){
 		GameManager.instance.effectVolume = n;
+		PlayerPrefs.SetFloat("EffectsVolume",n);
+		PlayerPrefs.Save();
+		
 	}
 
 	public void ChangePanel(string scene){

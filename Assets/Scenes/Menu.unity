@@ -859,6 +859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182ee4651fd71fc49b0e0226f8e3b40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectVolume: {fileID: 2095514213}
+  musicVolume: {fileID: 906124668}
   mainPanel: {fileID: 89197140}
   startPanel: {fileID: 507535}
   optionsPanel: {fileID: 493520968}
@@ -1969,8 +1971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82d3578c647a22a488ae4f9f72180508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolume: 0
-  effectVolume: 0
+  musicVolume: 0.5
+  effectVolume: 0.5
 --- !u!4 &969048479
 Transform:
   m_ObjectHideFlags: 0
@@ -4060,11 +4062,11 @@ MonoBehaviour:
     lineCount: 11
     pageCount: 1
     materialCount: 2
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
