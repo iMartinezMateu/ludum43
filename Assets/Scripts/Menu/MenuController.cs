@@ -22,6 +22,7 @@ public class MenuController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{		
+		AudioManager.instance.PlaySong();
 		effectVolume.value = PlayerPrefs.GetFloat("EffectsVolume",0.5f);
 		musicVolume.value = PlayerPrefs.GetFloat("MusicVolume",0.5f);
 	}
@@ -45,6 +46,7 @@ public class MenuController : MonoBehaviour
 	}
 
 	public void ChangePanel(string scene){
+		AudioManager.instance.PlayAnswer1();
 		switch(scene) {
 			case "main":
 				mainPanel.SetActive(true);

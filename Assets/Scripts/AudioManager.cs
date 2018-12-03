@@ -57,4 +57,14 @@ public class AudioManager : MonoBehaviour {
         fxSource.clip = s_answer2;
         fxSource.Play();
     }
+    
+    void Awake() {
+        if (instance == null) instance = this;
+        else if (instance != this) Destroy(gameObject);    
+		
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(ambientSource);
+        DontDestroyOnLoad(fxSource);
+        DontDestroyOnLoad(musicSource);
+    }
 }
