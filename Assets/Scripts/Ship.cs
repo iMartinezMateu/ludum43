@@ -12,6 +12,7 @@ public class Ship : MonoBehaviour {
     private void Start()
     {
         AudioManager.instance.PlaySong();
+        AudioManager.instance.PlaySea();
         sprites.Add(canon1);
         sprites.Add(canon1sin);
         sprites.Add(canon2);
