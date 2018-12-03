@@ -1559,7 +1559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainPanel: {fileID: 1071568126532056}
-  startPanel: {fileID: 0}
+  startPanel: {fileID: 1996044350440998}
   optionsPanel: {fileID: 1154485245733768}
   creditsPanel: {fileID: 1845141369926342}
 --- !u!114 &114780754610788972

@@ -270,12 +270,32 @@
         {
             "text": "The crew finds a floating treasure",
             "appearanceProbability": 1,
-            "answers": []
+            "answers": [
+                {
+                    "text": "",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
         },
         {
             "text": "The crew finds a floating barrel of rum",
             "appearanceProbability": 1,
-            "answers": []
+            "answers": [
+                {
+                    "text": "",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "badEvents": [
@@ -612,12 +632,137 @@
         {
             "text": "A giant wave has dragged part of your crew",
             "appearanceProbability": 1,
-            "answers": []
+            "answers": [
+                {
+                    "text": "",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
         },
         {
             "text": "A storm has broken part of the shell",
             "appearanceProbability": 1,
-            "answers": []
+            "answers": [
+                {
+                    "text": "",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "conditionalEvents": [
+        {
+            "text": "Your crew is hungry ... and has scurvy",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Make them eat wood",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Try to cure it with rum",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Pirates have vitamin C?",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Your crew mutinies",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Say: It was him",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Bribe the coolest crew",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Fire!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        },
+                        {
+                            "type": 2,
+                            "quantity": -9
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "The ship begins to sink",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Put the crew to bail water",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Cover the holes with barrels",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Throw weight overboard",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

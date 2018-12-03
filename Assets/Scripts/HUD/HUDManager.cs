@@ -15,8 +15,8 @@ public class HUDManager : MonoBehaviour {
 	#region Unity Methods
 
 	// Use this for initialization
-	void Start () {
-
+	void Awake () {
+		eventPanelController.eventTextTimeOnScreen = eventTextTimeOnScreen;
 	}
 	
 	// Update is called once per frame
@@ -53,10 +53,10 @@ public class HUDManager : MonoBehaviour {
 	}
 
 	public void ShowEvent(string text, List<string> options){
-		if (options.Count > 0){
+		if (options.Count > 1){
 			eventPanelController.ShowEventWithOptions(text, options);
 		} else {
-			eventPanelController.ShowEventWithoutOptions(text, eventTextTimeOnScreen);
+			eventPanelController.ShowEventWithoutOptions(text);
 		}
 	}
 

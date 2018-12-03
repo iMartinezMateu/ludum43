@@ -9,52 +9,49 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1149522384915086}
+  m_RootGameObject: {fileID: 1042201439235940}
   m_IsPrefabAsset: 1
---- !u!1 &1149522384915086
+--- !u!1 &1042201439235940
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4302490271866164}
-  - component: {fileID: 114311931631125484}
+  - component: {fileID: 4107021089230324}
+  - component: {fileID: 114452935580267794}
   m_Layer: 0
-  m_Name: ResourceManager
+  m_Name: CombatManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4302490271866164
+--- !u!4 &4107021089230324
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1149522384915086}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1042201439235940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114311931631125484
+--- !u!114 &114452935580267794
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1149522384915086}
+  m_GameObject: {fileID: 1042201439235940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29633327fa048475b8c187b5c4c6dc24, type: 3}
+  m_Script: {fileID: 11500000, guid: 61fca9f4de7e2634cbe370cb176a25eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hudManager: {fileID: 0}
-  booty: 0
-  pieces: 50
-  crew: 50
-  rum: 50
-  food: 50
-  guns: 50
+  piecesLost: 7
+  crewLost: 8
+  bootyLost: 6
+  bootyWon: 36

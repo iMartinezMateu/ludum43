@@ -12,12 +12,19 @@ public enum ResourceType {
 }
 
 public class ResourceManager : MonoBehaviour {
-	
+	public HUDManager hudManager;
+
+	[SerializeField]
 	private int booty = 0;
+	[SerializeField]
 	private int pieces = 0;
+	[SerializeField]
 	private int crew = 0;
+	[SerializeField]
 	private int rum = 0;
+	[SerializeField]
 	private int food = 0;
+	[SerializeField]
 	private int guns = 0;
 
 	private int happiness = 0;
@@ -26,9 +33,21 @@ public class ResourceManager : MonoBehaviour {
 
 	#region Unity methods
 
+	void Awake()
+	{
+		UpdateHappiness ();
+		UpdateBuoyancy ();
+		UpdatePower ();
+	}
+
 	// Use this for initialization
 	void Start () {
-
+		hudManager.SetValue (ResourceType.BOOTY, booty);
+		hudManager.SetValue (ResourceType.PIECES, pieces);
+		hudManager.SetValue (ResourceType.CREW, crew);
+		hudManager.SetValue (ResourceType.RUM, rum);
+		hudManager.SetValue (ResourceType.FOOD, food);
+		hudManager.SetValue (ResourceType.GUNS, guns);
 	}
 
 	// Update is called once per frame
@@ -46,6 +65,8 @@ public class ResourceManager : MonoBehaviour {
 		}
 		set {
 			booty = value;
+			if (booty < 0) booty = 0;
+			else if (booty > 999) booty = 999;
 		}
 	}
 
@@ -55,6 +76,8 @@ public class ResourceManager : MonoBehaviour {
 		}
 		set {
 			pieces = value;
+			if (pieces < 0) pieces = 0;
+			else if (pieces > 999) pieces = 999;
 			UpdateBuoyancy ();
 		}
 	}
@@ -65,8 +88,11 @@ public class ResourceManager : MonoBehaviour {
 		}
 		set {
 			crew = value;
+			if (crew < 0) crew = 0;
+			else if (crew > 999) crew = 999;
 			UpdateHappiness ();
 			UpdateBuoyancy ();
+			UpdatePower ();
 		}
 	}
 
@@ -76,6 +102,8 @@ public class ResourceManager : MonoBehaviour {
 		}
 		set {
 			rum = value;
+			if (rum < 0) rum = 0;
+			else if (rum > 999) rum = 999;
 			UpdateHappiness ();
 		}
 	}
@@ -86,6 +114,8 @@ public class ResourceManager : MonoBehaviour {
 		}
 		set {
 			food = value;
+			if (food < 0) food = 0;
+			else if (food > 999) food = 999;
 			UpdateHappiness ();
 		}
 	}
@@ -96,42 +126,72 @@ public class ResourceManager : MonoBehaviour {
 		}
 		set {
 			guns = value;
+			if (guns < 0) guns = 0;
+			else if (guns > 999) guns = 999;
 			UpdateBuoyancy ();
+			UpdatePower ();
 		}
 	}
 
-	void UpdateHappiness () {
+	public int GetResource (ResourceType r) {
+		int ret = 0;
+		switch(r){
+			case ResourceType.BOOTY:
+				ret = booty;
+			break;
+			case ResourceType.CREW:
+				ret = crew;
+			break;
+			case ResourceType.FOOD:
+				ret = food;
+			break;
+			case ResourceType.GUNS:
+				ret = guns;
+			break;
+			case ResourceType.PIECES:
+				ret = pieces;
+			break;
+			case ResourceType.RUM:
+				ret = rum;
+			break;
+			default: break;
+		}
+		return ret;
+	}
+
+	public int GetHappinessValue () {
+		return happiness;
+	}
+
+	public int GetBuoyancyValue () {
+		return buoyancy;
+	}
+
+	public int GetPowerValue () {
+		return power;
+	}
+
+	private void UpdateHappiness () {
 		int crewMultiplier = 1;
 		int foodMultiplier = 3;
 		int rumMultiplier = 5;
-		happiness = (food * foodMultiplier + rum * rumMultiplier) / (crew * crewMultiplier + food * foodMultiplier + rum * rumMultiplier);
+		happiness = (int)((float)((float)(food * foodMultiplier + rum * rumMultiplier) / (float)(crew * crewMultiplier + food * foodMultiplier + rum * rumMultiplier))*100);
 	}
 
-	void UpdateBuoyancy () {
+	private void UpdateBuoyancy () {
 		int piecesMultiplier = 10;
 		int crewMultiplier = 2;
 		int gunMultiplier = 1;
-		buoyancy = (pieces * piecesMultiplier) / (pieces * piecesMultiplier + crew * crewMultiplier + guns * gunMultiplier);
+		buoyancy = (int)((float)((float)(pieces * piecesMultiplier) / (float)(pieces * piecesMultiplier + crew * crewMultiplier + guns * gunMultiplier))*100);
+		GameObject.FindObjectOfType<Ship>().RefreshStat((float)buoyancy/100);
 	}
 
-	void UpdatePower () {
+	private void UpdatePower () {
 		int crewMultiplier = 1;
 		int gunMultiplier = 3;
 		power = crew * crewMultiplier + guns * gunMultiplier;
 	}
 
-	int GetHappinessValue () {
-		return happiness;
-	}
-
-	int GetBuoyancyValue () {
-		return buoyancy;
-	}
-
-	int GetPowerValue () {
-		return power;
-	}
-	
 	#endregion
 
 }

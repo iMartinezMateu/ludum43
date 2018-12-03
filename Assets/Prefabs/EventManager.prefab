@@ -53,5 +53,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hudManager: {fileID: 0}
   resourceManager: {fileID: 0}
-  secondsBetweenEvents: 10
-  badPercentage: 70
+  secondsBetweenEvents: 5
+  badEventsProbability: 70
+  normalEventsBetweenFatalEvents: 3
+  happinessThreshold: 20
+  buoyancyThreshold: 20
+  foodThreshold: 20
+  fatalEventsToLose: 3

@@ -6,18 +6,42 @@ using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+enum ConditionalEvents {
+	LOWHAPPINESS = 0,
+	LOWBUOYANCY = 1,
+	LOWFOOD = 2
+}
+
 public class EventManager : MonoBehaviour {
 	public HUDManager hudManager;
 	public ResourceManager resourceManager;
 
 	private Event currentEvent;
-
 	private EventLists events;
+
+	[NonSerialized]
+	public int eventCounter;
+	[NonSerialized]
+	public int fatalEventCounter;
+	[NonSerialized]
+	public int arrrrCounter;
+
+	private int betweenFatalEventsCounter = -1;
 
 	[SerializeField]
 	private int secondsBetweenEvents;
 	[SerializeField]
-	private int badPercentage;
+	private int badEventsProbability;
+	[SerializeField]
+	private int normalEventsBetweenFatalEvents;
+	[SerializeField]
+	private int happinessThreshold;
+	[SerializeField]
+	private int buoyancyThreshold;
+	[SerializeField]
+	private int foodThreshold;
+	[SerializeField]
+	private int fatalEventsToLose;
 
 	void Start () {
 		events = JsonMapper.ToObject<EventLists> (Resources.Load<TextAsset> ("EventsData").text);
@@ -28,33 +52,78 @@ public class EventManager : MonoBehaviour {
 	}
 
 	private IEnumerator InvokeEvent () {
-		int type = Random.Range (0, 100);
-		if (type < badPercentage) {
-			int index = Random.Range (0, events.badEvents.Length);
-			currentEvent = events.badEvents[index];
+		if (resourceManager.GetHappinessValue() < happinessThreshold && betweenFatalEventsCounter == -1){
+			currentEvent = events.conditionalEvents[(int)ConditionalEvents.LOWHAPPINESS];
+			fatalEventCounter++;
+			betweenFatalEventsCounter++;
+		} else if (resourceManager.GetBuoyancyValue() < buoyancyThreshold && betweenFatalEventsCounter == -1) {
+			currentEvent = events.conditionalEvents[(int)ConditionalEvents.LOWBUOYANCY];
+			fatalEventCounter++;
+			betweenFatalEventsCounter++;
+		} else if (resourceManager.Food < foodThreshold && betweenFatalEventsCounter == -1){
+			currentEvent = events.conditionalEvents[(int)ConditionalEvents.LOWFOOD];
+			fatalEventCounter++;
+			betweenFatalEventsCounter++;
 		} else {
-			int index = Random.Range (0, events.goodEvents.Length);
-			currentEvent = events.goodEvents[index];
+			int type = Random.Range (0, 100);
+			if (type < badEventsProbability) {
+				int index = Random.Range (0, events.badEvents.Length);
+				currentEvent = events.badEvents[index];
+			} else {
+				int index = Random.Range (0, events.goodEvents.Length);
+				currentEvent = events.goodEvents[index];
+			}
+			if (betweenFatalEventsCounter > -1) {
+				betweenFatalEventsCounter++;
+				if (betweenFatalEventsCounter == normalEventsBetweenFatalEvents){
+					betweenFatalEventsCounter = -1;
+				}
+			}
 		}
 
-		yield return new WaitForSeconds (secondsBetweenEvents);
+		if (fatalEventCounter >= fatalEventsToLose){
+			//Lose Panel
+		} else {
+			yield return new WaitForSeconds (secondsBetweenEvents);
 
-		ShowEvent (currentEvent);
+			List<string> options = new List<string> ();
+			foreach (EventAnswer answer in currentEvent.answers) {
+				options.Add (answer.text);
+			}
+
+			if (options.Count > 1){
+				int arrrrAnswer = findArrrrAnswer();
+
+				options[arrrrAnswer] += "[arrrr]";
+			}
+
+			hudManager.ShowEvent (currentEvent.text, options);
+
+			eventCounter++;
+		}
 	}
 
 	private void OnTriggerActionButton (int n) {
-		if (n != -1){
-			ProcessResources (currentEvent.answers[n]);
-		}
+		ProcessResources (currentEvent.answers[n]);
 		StartCoroutine (InvokeEvent ());
 	}
 
-	private void ShowEvent (Event e) {
-		List<string> options = new List<string> ();
-		foreach (EventAnswer answer in e.answers) {
-			options.Add (answer.text);
+	//Obtener la respuesta que mas joda al jugador
+	private int findArrrrAnswer() {
+		int currentAnswerIndex = 0;
+		int newQuantity = int.MaxValue;
+
+		for (int i = 0; i < currentEvent.answers.Length; i++) {
+			for (int j = 0; j < currentEvent.answers[i].balances.Length; j++){
+				Balance b = currentEvent.answers[i].balances[j];
+				if (b.type != ResourceType.BOOTY && resourceManager.GetResource(b.type) + b.quantity < newQuantity){
+					currentAnswerIndex = i;
+					newQuantity = resourceManager.GetResource(b.type) + b.quantity;
+				}
+			}
 		}
-		hudManager.ShowEvent (e.text, options);
+
+		return currentAnswerIndex;
 	}
 
 	private void ProcessResources (EventAnswer ea) {
