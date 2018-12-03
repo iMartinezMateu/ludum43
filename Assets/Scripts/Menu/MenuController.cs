@@ -38,6 +38,8 @@ public class MenuController : MonoBehaviour {
 				startPanel.SetActive(false);
 				optionsPanel.SetActive(false);
 				creditsPanel.SetActive(false);
+
+				GameManager.instance.ChangeScene(1);
 			break;
 			case "start":
 				mainPanel.SetActive(false);
