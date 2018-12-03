@@ -4,11 +4,11 @@ using UnityEngine;
 
 public enum ResourceType {
 	BOOTY = 0,
-	PIECES,
-	CREW,
-	RUM,
-	FOOD,
-	GUNS
+	PIECES = 1,
+	CREW = 2,
+	RUM = 3,
+	FOOD = 4,
+	GUNS = 5
 }
 
 public class ResourceManager : MonoBehaviour {
@@ -176,6 +176,7 @@ public class ResourceManager : MonoBehaviour {
 		int foodMultiplier = 3;
 		int rumMultiplier = 5;
 		happiness = (int)((float)((float)(food * foodMultiplier + rum * rumMultiplier) / (float)(crew * crewMultiplier + food * foodMultiplier + rum * rumMultiplier))*100);
+		GameObject.FindObjectOfType<HUDManager>().SetHappinessValue(happiness);
 	}
 
 	private void UpdateBuoyancy () {

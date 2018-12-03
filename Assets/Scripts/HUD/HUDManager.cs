@@ -8,6 +8,8 @@ public class HUDManager : MonoBehaviour {
 	private TopPanelController topPanelController;
 	[SerializeField]
 	private EventPanelController eventPanelController;
+    [SerializeField]
+    private GameObject rankingPanel;
 
 	[SerializeField]
 	private int eventTextTimeOnScreen; 
@@ -52,6 +54,10 @@ public class HUDManager : MonoBehaviour {
 		}
 	}
 
+	public void SetHappinessValue(int h){
+		topPanelController.SetHappinessFace(h);
+	}
+
 	public void ShowEvent(string text, List<string> options){
 		if (options.Count > 1){
 			eventPanelController.ShowEventWithOptions(text, options);
@@ -67,6 +73,16 @@ public class HUDManager : MonoBehaviour {
 	public void RemoveClickEventOption(EventPanelController.ClickEventOption ev){
 		eventPanelController.OnClickEventOption -= ev;
 	}
+
+    public void ShowRanking()
+    {
+        rankingPanel.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        
+    }
 
 	#endregion
 

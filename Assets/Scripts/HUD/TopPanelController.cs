@@ -18,6 +18,11 @@ public class TopPanelController : MonoBehaviour {
 	private TextMeshProUGUI cannonText;
 	[SerializeField]
 	private TextMeshProUGUI peopleText;
+
+	[SerializeField]
+	private Image crewHappinessImage;
+	[SerializeField]
+	private Sprite[] happinessStates;
 	
 	#region Unity Methods
 
@@ -44,11 +49,11 @@ public class TopPanelController : MonoBehaviour {
 	}
 
 	public void SetWoodValue(int v){
-		rumText.text = v.ToString();
+		woodText.text = v.ToString();
 	}
 
 	public void SetRumValue(int v){
-		woodText.text = v.ToString();
+		rumText.text = v.ToString();
 	}
 
 	public void SetCannonValue(int v){
@@ -57,6 +62,18 @@ public class TopPanelController : MonoBehaviour {
 
 	public void SetPeopleValue(int v){
 		peopleText.text = v.ToString();
+	}
+
+	public void SetHappinessFace(int h){
+		if (h <= 33){
+			crewHappinessImage.sprite = happinessStates[0];
+            if (Log.instance) Log.instance.ShowMessage("We are angry!!!");
+		} else if (h > 33 && h <= 66){
+			crewHappinessImage.sprite = happinessStates[1];
+            if (Log.instance) Log.instance.ShowMessage("We are not happy!");
+		} else if (h > 66) {
+			crewHappinessImage.sprite = happinessStates[2];
+		}
 	}
 
 	#endregion

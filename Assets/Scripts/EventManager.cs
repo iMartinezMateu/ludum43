@@ -82,13 +82,15 @@ public class EventManager : MonoBehaviour {
 		}
 
 		if (fatalEventCounter >= fatalEventsToLose){
-			//Lose Panel
+            GameObject.FindObjectOfType<HUDManager>().ShowRanking();
 		} else {
 			yield return new WaitForSeconds (secondsBetweenEvents);
 
 			List<string> options = new List<string> ();
 			foreach (EventAnswer answer in currentEvent.answers) {
-				options.Add (answer.text);
+				string answerText = answer.text;
+				if (checkNegativeBalances(answer)) answerText += "[disabled]";
+				options.Add (answerText);
 			}
 
 			if (options.Count > 1){
@@ -106,6 +108,15 @@ public class EventManager : MonoBehaviour {
 	private void OnTriggerActionButton (int n) {
 		ProcessResources (currentEvent.answers[n]);
 		StartCoroutine (InvokeEvent ());
+	}
+
+	private bool checkNegativeBalances(EventAnswer a) {
+		foreach (Balance b in a.balances) {
+			if (resourceManager.GetResource(b.type) + b.quantity < 0){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	//Obtener la respuesta que mas joda al jugador

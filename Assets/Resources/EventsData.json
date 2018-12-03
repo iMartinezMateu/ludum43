@@ -9,7 +9,7 @@
                     "balances": [
                         {
                             "type": 0,
-                            "quantity": -10
+                            "quantity": -5
                         },
                         {
                             "type": 1,
@@ -22,7 +22,7 @@
                     "balances": [
                         {
                             "type": 0,
-                            "quantity": -10
+                            "quantity": -5
                         },
                         {
                             "type": 4,
@@ -35,7 +35,7 @@
                     "balances": [
                         {
                             "type": 0,
-                            "quantity": -10
+                            "quantity": -5
                         },
                         {
                             "type": 5,
@@ -54,7 +54,7 @@
                     "balances": [
                         {
                             "type": 4,
-                            "quantity": -10
+                            "quantity": -5
                         },
                         {
                             "type": 3,
@@ -67,7 +67,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -10
+                            "quantity": -5
                         },
                         {
                             "type": 4,
@@ -80,7 +80,7 @@
                     "balances": [
                         {
                             "type": 2,
-                            "quantity": -10
+                            "quantity": -5
                         },
                         {
                             "type": 4,
@@ -108,7 +108,7 @@
                     "balances": [
                         {
                             "type": 4,
-                            "quantity": -10
+                            "quantity": 27
                         }
                     ]
                 },
@@ -136,7 +136,7 @@
                         },
                         {
                             "type": 3,
-                            "quantity": -10
+                            "quantity": -6
                         }
                     ]
                 },
@@ -145,7 +145,7 @@
                     "balances": [
                         {
                             "type": 0,
-                            "quantity": -10
+                            "quantity": -5
                         },
                         {
                             "type": 1,
@@ -158,7 +158,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -10
+                            "quantity": -9
                         }
                     ]
                 }
@@ -215,7 +215,7 @@
                     "balances": [
                         {
                             "type": 4,
-                            "quantity": -10
+                            "quantity": -9
                         }
                     ]
                 },
@@ -224,7 +224,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -10
+                            "quantity": -9
                         }
                     ]
                 }
@@ -248,7 +248,7 @@
                     "balances": [
                         {
                             "type": 3,
-                            "quantity": -10
+                            "quantity": -9
                         }
                     ]
                 },
@@ -257,7 +257,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -10
+                            "quantity": -9
                         },
                         {
                             "type": 1,
@@ -272,11 +272,11 @@
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "",
+                    "text": "Yaaay!",
                     "balances": [
                         {
-                            "type": 1,
-                            "quantity": -13
+                            "type": 0,
+                            "quantity": 27
                         }
                     ]
                 }
@@ -287,11 +287,11 @@
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "",
+                    "text": "Yaaaay!!",
                     "balances": [
                         {
                             "type": 1,
-                            "quantity": -13
+                            "quantity": 27
                         }
                     ]
                 }
@@ -308,7 +308,7 @@
                     "balances": [
                         {
                             "type": 2,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -317,7 +317,7 @@
                     "balances": [
                         {
                             "type": 1,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -326,7 +326,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 }
@@ -341,7 +341,7 @@
                     "balances": [
                         {
                             "type": 4,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -350,7 +350,7 @@
                     "balances": [
                         {
                             "type": 0,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -359,7 +359,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 }
@@ -374,7 +374,7 @@
                     "balances": [
                         {
                             "type": 2,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -383,7 +383,7 @@
                     "balances": [
                         {
                             "type": 1,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -392,7 +392,7 @@
                     "balances": [
                         {
                             "type": 3,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 }
@@ -407,7 +407,7 @@
                     "balances": [
                         {
                             "type": 1,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -416,7 +416,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -425,7 +425,7 @@
                     "balances": [
                         {
                             "type": 3,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 }
@@ -440,7 +440,7 @@
                     "balances": [
                         {
                             "type": 2,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -449,7 +449,7 @@
                     "balances": [
                         {
                             "type": 4,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -458,7 +458,7 @@
                     "balances": [
                         {
                             "type": 2,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 }
@@ -473,7 +473,7 @@
                     "balances": [
                         {
                             "type": 3,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -482,7 +482,7 @@
                     "balances": [
                         {
                             "type": 2,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -491,7 +491,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 }
@@ -506,7 +506,7 @@
                     "balances": [
                         {
                             "type": 4,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -515,7 +515,7 @@
                     "balances": [
                         {
                             "type": 3,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -524,7 +524,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 }
@@ -539,7 +539,7 @@
                     "balances": [
                         {
                             "type": 3,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -548,7 +548,7 @@
                     "balances": [
                         {
                             "type": 2,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -557,7 +557,7 @@
                     "balances": [
                         {
                             "type": 4,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 }
@@ -572,7 +572,7 @@
                     "balances": [
                         {
                             "type": 3,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -581,7 +581,7 @@
                     "balances": [
                         {
                             "type": 4,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -590,7 +590,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 }
@@ -605,7 +605,7 @@
                     "balances": [
                         {
                             "type": 2,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -614,7 +614,7 @@
                     "balances": [
                         {
                             "type": 1,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 },
@@ -623,7 +623,7 @@
                     "balances": [
                         {
                             "type": 4,
-                            "quantity": -10
+                            "quantity": -13
                         }
                     ]
                 }
@@ -634,10 +634,10 @@
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "",
+                    "text": "Oh! No!",
                     "balances": [
                         {
-                            "type": 1,
+                            "type": 4,
                             "quantity": -13
                         }
                     ]
@@ -649,7 +649,7 @@
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "",
+                    "text": "Oh! No!",
                     "balances": [
                         {
                             "type": 1,

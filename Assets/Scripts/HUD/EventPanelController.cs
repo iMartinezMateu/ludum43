@@ -20,6 +20,8 @@ public class EventPanelController : MonoBehaviour {
 	[SerializeField]
 	private Animator[] signAnimators;
 	[SerializeField]
+	private Button[] signButtons;
+	[SerializeField]
 	private TextMeshProUGUI[] signTexts;
 	[SerializeField]
 	private GameObject[] arrrrTexts;
@@ -69,12 +71,18 @@ public class EventPanelController : MonoBehaviour {
 		eventText.text = text;
 		eventAnimator.SetBool("ShowWithEvents", true);
 		for (int i = 0; i < options.Count; i++){
-			if (options[i].IndexOf("[arrrr]") > -1) {
-				signTexts[i].text = options[i].Replace("[arrrr]", "");
+			string optionText = options[i];
+
+			if (optionText.IndexOf("[arrrr]") > -1) {
+				optionText = optionText.Replace("[arrrr]", "");
 				arrrrTexts[i].SetActive(true);
-			} else {
-				signTexts[i].text = options[i];
 			}
+			if (optionText.IndexOf("[disabled]") > -1) {
+				optionText = optionText.Replace("[disabled]", "");
+				signButtons[i].interactable = false;
+			}
+
+			signTexts[i].text = optionText;
 			signAnimators[i].SetBool("Show", true);
 		}
 	}
@@ -82,9 +90,18 @@ public class EventPanelController : MonoBehaviour {
 	public void HideEventWithOptions(){
 		eventAnimator.SetBool("ShowWithEvents", false);
 		for (int i = 0; i < signAnimators.Length; i++) {
+			signAnimators[i].SetBool("Show", false);
+		}
+
+		StartCoroutine(ResetOptions());
+	}
+
+	public IEnumerator ResetOptions(){
+		yield return new WaitForSeconds(1);
+		for (int i = 0; i < signAnimators.Length; i++) {
 			signTexts[i].text = "";
 			arrrrTexts[i].SetActive(false);
-			signAnimators[i].SetBool("Show", false);
+			signButtons[i].interactable = true;
 		}
 	}
 
