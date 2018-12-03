@@ -14,27 +14,70 @@ public class Battle : MonoBehaviour {
         resources = GameObject.FindObjectOfType<ResourceManager>();
     }
 
-    public void Fight(out int enemyPower, out bool win)
+    public Event Fight()
     {
-        enemyPower = Random.Range(50, 150);
 
+        int enemyPower = Random.Range(50, 150);
+        string winText = "";
+        Balance[] balances = new Balance[0];
+        
         if (resources.GetPowerValue() > enemyPower)
         {
-            Win();
-            win = true;
+            winText = "You Won!";
+            balances = new Balance[]
+            {
+                new Balance()
+                {
+                    type=ResourceType.BOOTY,
+                    quantity = bootyWon
+                }
+            };
         }
 
         else
         {
-            Lose();
-            win = false;
+            winText = "You lose the battle";
+            balances = new Balance[]
+            {
+                new Balance()
+                {
+                    type = ResourceType.PIECES,
+                    quantity = -piecesLost
+                },
+                new Balance()
+                {
+                    type = ResourceType.CREW,
+                    quantity = -crewLost
+                },
+                new Balance()
+                {
+                    type = ResourceType.BOOTY,
+                    quantity = -bootyLost
+                }
+            };
         }
+
+
+
+        return new Event()
+        {
+            text = "Pirate Battle!! \n Your power: " + resources.GetPowerValue() + "\n Enemy power: " + enemyPower + "\n" + winText,
+            answers = new EventAnswer[1]
+            {
+                new EventAnswer()
+                {
+                    text="OK",
+                    balances = balances
+                }
+            }
+        };
+
+
     }
 
     void Win()
     {
         resources.Booty += bootyWon;
-        Log.instance.SendMessage("Yaaay! We won the battle!!");
     }
 
     void Lose()
@@ -42,6 +85,5 @@ public class Battle : MonoBehaviour {
         resources.Pieces -= piecesLost;
         resources.Crew -= crewLost;
         resources.Booty -= bootyLost;
-        Log.instance.SendMessage("Bastards! We lost the battle!");
     }
 }

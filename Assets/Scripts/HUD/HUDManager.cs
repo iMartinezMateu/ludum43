@@ -9,7 +9,7 @@ public class HUDManager : MonoBehaviour {
 	[SerializeField]
 	private EventPanelController eventPanelController;
     [SerializeField]
-    private GameObject rankingPanel;
+    private GameObject deadPanel;
 
 	[SerializeField]
 	private int eventTextTimeOnScreen; 
@@ -64,6 +64,7 @@ public class HUDManager : MonoBehaviour {
 		} else {
 			eventPanelController.ShowEventWithoutOptions(text);
 		}
+        AudioManager.instance.PlayEvent();
 	}
 
 	public void AddClickEventOption(EventPanelController.ClickEventOption ev){
@@ -74,14 +75,14 @@ public class HUDManager : MonoBehaviour {
 		eventPanelController.OnClickEventOption -= ev;
 	}
 
-    public void ShowRanking()
+    public void ShowDead()
     {
-        rankingPanel.SetActive(true);
+        deadPanel.SetActive(true);
     }
 
     public void Restart()
     {
-        
+        FindObjectOfType<GameManager>().ChangeScene(1);
     }
 
 	#endregion

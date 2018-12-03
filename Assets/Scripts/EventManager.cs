@@ -33,7 +33,9 @@ public class EventManager : MonoBehaviour {
 	private int secondsBetweenEvents;
 	[SerializeField]
 	private int badEventsProbability;
-	[SerializeField]
+    [SerializeField]
+    private int battleEventsProbability;
+    [SerializeField]
 	private int normalEventsBetweenFatalEvents;
 	[SerializeField]
 	private int foodLostInEveryEvent;
@@ -72,10 +74,15 @@ public class EventManager : MonoBehaviour {
 			if (type < badEventsProbability) {
 				int index = Random.Range (0, events.badEvents.Length);
 				currentEvent = events.badEvents[index];
-			} else {
+			} else if (type > badEventsProbability+battleEventsProbability) {
 				int index = Random.Range (0, events.goodEvents.Length);
 				currentEvent = events.goodEvents[index];
 			}
+            else
+            {
+                currentEvent = GameObject.FindObjectOfType<Battle>().Fight();
+
+            }
 			if (betweenFatalEventsCounter > -1) {
 				betweenFatalEventsCounter++;
 				if (betweenFatalEventsCounter == normalEventsBetweenFatalEvents){
@@ -85,7 +92,8 @@ public class EventManager : MonoBehaviour {
 		}
 
 		if (fatalEventCounter >= fatalEventsToLose){
-            GameObject.FindObjectOfType<HUDManager>().ShowRanking();
+            GameObject.FindObjectOfType<HUDManager>().ShowDead();
+            
 		} else {
 			yield return new WaitForSeconds (secondsBetweenEvents);
 
@@ -101,7 +109,7 @@ public class EventManager : MonoBehaviour {
 			}
 
 			if (options.Count == negativeCount){
-				GameObject.FindObjectOfType<HUDManager>().ShowRanking();
+				GameObject.FindObjectOfType<HUDManager>().ShowDead();
 			}
 
 			if (options.Count > 1){
@@ -185,6 +193,8 @@ public class EventManager : MonoBehaviour {
 				default:
 					break;
 			}
+
+            Debug.Log("Recurso: " + balance.type + " tipo " + (int)balance.type);
 		}
 	}
 

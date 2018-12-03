@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class HUDRanking : MonoBehaviour {
 
+    public EventManager myEventManager;
+    public ResourceManager myResourceManager;
     private Animator rankingAnimator;
     public TextMeshProUGUI infoRankingText;
     public TMP_InputField playerName;
@@ -30,18 +32,18 @@ public class HUDRanking : MonoBehaviour {
     }
     private void CalculeGloryPoints()
     {
-        float foodFactor = 1f *1.2f;
-        float ronFactor = 1f *1.5f;
-        float tripulationFactor = 1f * 1.5f;
-        float woodFactor = 1f * 2f;
-        float shipPowerFactor= 1f * 1.2f;
-        float goldFactor = 1;
-
-        gloryPoints = (int)(foodFactor + ronFactor + tripulationFactor + woodFactor + shipPowerFactor + goldFactor);
+        float foodFactor = myResourceManager.Food *1.2f;
+        float ronFactor = myResourceManager.Rum * 1.5f;
+        float tripulationFactor = myResourceManager.Crew * 1.5f;
+        float woodFactor = myResourceManager.Pieces * 2f;
+        float shipPowerFactor= myResourceManager.GetPowerValue() * 1.2f;
+        float goldFactor = myResourceManager.Booty;
+        float arrrrPoints = myEventManager.arrrrCounter *3;
+        gloryPoints = (int)(foodFactor + ronFactor + tripulationFactor + woodFactor + shipPowerFactor + goldFactor + arrrrPoints);
 
     }
     private void SetText()
     {
-        infoRankingText.text = playerName.text + ":  " + gloryPoints +" Glory Points";
+        infoRankingText.text = playerName.text + ":  "+"x "+myEventManager.arrrrCounter +" Arr = " + gloryPoints + " Glory Points";
     }
 }

@@ -205,7 +205,7 @@
                     "text": "On board!",
                     "balances": [
                         {
-                            "type": 3,
+                            "type": 2,
                             "quantity": 27
                         }
                     ]
@@ -637,7 +637,7 @@
                     "text": "Oh! No!",
                     "balances": [
                         {
-                            "type": 4,
+                            "type": 2,
                             "quantity": -13
                         }
                     ]
