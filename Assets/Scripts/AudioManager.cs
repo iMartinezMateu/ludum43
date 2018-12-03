@@ -16,6 +16,13 @@ public class AudioManager : MonoBehaviour {
         if (!instance) instance = this;
     }
 
+    private void Update()
+    {
+        ambientSource.volume = GameManager.instance.effectVolume;
+        fxSource.volume = GameManager.instance.effectVolume;
+        musicSource.volume = GameManager.instance.musicVolume;
+    }
+
 
     /// <summary>
     /// Inicia nuevo sonido ambiente
@@ -56,5 +63,15 @@ public class AudioManager : MonoBehaviour {
     {
         fxSource.clip = s_answer2;
         fxSource.Play();
+    }
+    
+    void Awake() {
+        if (instance == null) instance = this;
+        else if (instance != this) Destroy(gameObject);    
+		
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(ambientSource);
+        DontDestroyOnLoad(fxSource);
+        DontDestroyOnLoad(musicSource);
     }
 }
