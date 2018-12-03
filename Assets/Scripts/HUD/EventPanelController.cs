@@ -50,12 +50,14 @@ public class EventPanelController : MonoBehaviour {
 	#region Public Methods
 
 	public void ShowEventWithoutOptions(string text){
+		AudioManager.instance.PlayEvent();
 		timer = 0;
 		eventText.text = text;
 		StartCoroutine(EventWithoutOptionsAnimation());
 	}
 
 	IEnumerator EventWithoutOptionsAnimation(){
+		AudioManager.instance.PlayEvent();
 		eventTimerSlider.gameObject.SetActive(true);
 		eventAnimator.SetBool("ShowWithoutEvents", true);
 
@@ -68,6 +70,7 @@ public class EventPanelController : MonoBehaviour {
 	}
 
 	public void ShowEventWithOptions(string text, List<string> options){
+		AudioManager.instance.PlayEvent();
 		eventText.text = text;
 		eventAnimator.SetBool("ShowWithEvents", true);
 		for (int i = 0; i < options.Count; i++){

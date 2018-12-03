@@ -125,6 +125,7 @@ public class EventManager : MonoBehaviour {
 	}
 
 	private void OnTriggerActionButton (int n) {
+		AudioManager.instance.PlayAnswer1();
 		ProcessResources (currentEvent.answers[n]);
 		if (n == currentEventArrrrIndex) {
 			arrrrCounter++;
