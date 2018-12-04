@@ -207,14 +207,14 @@ public class ResourceManager : MonoBehaviour {
 
 	private void UpdateHappiness () {
 		int crewMultiplier = 1;
-		int foodMultiplier = 3;
-		int rumMultiplier = 5;
+		int foodMultiplier = 2;
+		int rumMultiplier = 4;
 		happiness = (int)((float)((float)(food * foodMultiplier + rum * rumMultiplier) / (float)(crew * crewMultiplier + food * foodMultiplier + rum * rumMultiplier))*100);
 		GameObject.FindObjectOfType<HUDManager>().SetHappinessValue(happiness);
 	}
 
 	private void UpdateBuoyancy () {
-		int piecesMultiplier = 10;
+		int piecesMultiplier = 8;
 		int crewMultiplier = 2;
 		int gunMultiplier = 1;
 		buoyancy = (int)((float)((float)(pieces * piecesMultiplier) / (float)(pieces * piecesMultiplier + crew * crewMultiplier + guns * gunMultiplier))*100);

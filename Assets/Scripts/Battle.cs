@@ -17,7 +17,7 @@ public class Battle : MonoBehaviour {
     public Event Fight()
     {
 
-        int enemyPower = Random.Range(50, 150);
+        int enemyPower = Random.Range(100, 200);
         string winText = "";
         Balance[] balances = new Balance[0];
         

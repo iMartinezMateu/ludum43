@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
+	public string[] mainButtonTexts_EN = {"Start", "Options", "Credits"};
+	public string[] optionSlidersTexts_EN = {"Music Volume", "Effects Volume"};
 
 	public Slider effectVolume;
 
