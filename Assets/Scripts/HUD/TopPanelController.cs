@@ -51,7 +51,7 @@ public class TopPanelController : MonoBehaviour,IPointerEnterHandler, IPointerEx
 	
 	// Update is called once per frame
 	void Update () {
-		/* if (currentHover != null)
+		if (currentHover != null)
 		{
 			goldImage.SetActive(true);
 			foodImage.SetActive(true);
@@ -68,7 +68,7 @@ public class TopPanelController : MonoBehaviour,IPointerEnterHandler, IPointerEx
 			woodImage.SetActive(false);
 			cannonImage.SetActive(false);
 			crewImage.SetActive(false);
-		}*/
+		}
 	}
 
 	#endregion
