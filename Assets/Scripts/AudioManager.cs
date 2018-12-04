@@ -48,6 +48,13 @@ public class AudioManager : MonoBehaviour {
         musicSource.clip = s_song;
         musicSource.Play();
     }
+    
+    public void PlaySea()
+    {
+        ambientSource.clip = s_seaAmbient;
+        ambientSource.loop = true;
+        ambientSource.Play();
+    }
 
     public void PlayEvent()
     {
@@ -59,7 +66,7 @@ public class AudioManager : MonoBehaviour {
         fxSource.clip = s_answer1;
         fxSource.Play();
     }
-    public void PlayAnwer2()
+    public void PlayAnswer2()
     {
         fxSource.clip = s_answer2;
         fxSource.Play();
