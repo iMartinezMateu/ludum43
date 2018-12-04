@@ -28,11 +28,11 @@ public class GameLangManager : MonoBehaviour {
 		dictionary_es.Add("NO_FOOD", "Capitan, no podeis vivir sin comida!");
 		dictionary_es.Add("RAGE_POINTS", "Puntos de furia");
 		dictionary_es.Add("NEED_MORE_WOOD", "Necesitamos mas madera para mantenernos a flote");
-		dictionary_en.Add("YOU_WON", "Has ganado!");
-		dictionary_en.Add("YOU_LOSE", "Has perdido!");
-		dictionary_en.Add("PIRATE_BATTLE", "Batalla de piratas!!");
-		dictionary_en.Add("YOUR_POWER", "Tu poder: ");
-		dictionary_en.Add("ENEMY_POWER", "Poder enemigo: ");
+		dictionary_es.Add("YOU_WON", "Has ganado!");
+		dictionary_es.Add("YOU_LOSE", "Has perdido!");
+		dictionary_es.Add("PIRATE_BATTLE", "Batalla de piratas!!");
+		dictionary_es.Add("YOUR_POWER", "Tu poder: ");
+		dictionary_es.Add("ENEMY_POWER", "Poder enemigo: ");
 	}
 	
 	// Update is called once per frame
