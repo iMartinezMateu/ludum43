@@ -173,7 +173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &152485773
 Prefab:
@@ -354,7 +354,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &618080781 stripped
 MonoBehaviour:
@@ -362,7 +362,49 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 152485773}
   m_Script: {fileID: 11500000, guid: 86a8a2c7634d143f2a7c999e6c2b5b56, type: 3}
---- !u!1001 &861088306
+--- !u!1001 &647271169
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4592536565028838, guid: c742cc80be4c67744acdc79e64cac3d5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592536565028838, guid: c742cc80be4c67744acdc79e64cac3d5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592536565028838, guid: c742cc80be4c67744acdc79e64cac3d5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592536565028838, guid: c742cc80be4c67744acdc79e64cac3d5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592536565028838, guid: c742cc80be4c67744acdc79e64cac3d5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592536565028838, guid: c742cc80be4c67744acdc79e64cac3d5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592536565028838, guid: c742cc80be4c67744acdc79e64cac3d5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592536565028838, guid: c742cc80be4c67744acdc79e64cac3d5, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c742cc80be4c67744acdc79e64cac3d5, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &654003988
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -399,7 +441,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4959903120987774, guid: bfbc3793e65a90d4f9cb7d58dfa12933, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfbc3793e65a90d4f9cb7d58dfa12933, type: 2}
@@ -449,7 +491,7 @@ Prefab:
     - target: {fileID: 224575313595563024, guid: 76637974c67a0d74d9024fa8480c11bf,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224575313595563024, guid: 76637974c67a0d74d9024fa8480c11bf,
         type: 2}
@@ -686,6 +728,43 @@ Prefab:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114893194440158814, guid: 76637974c67a0d74d9024fa8480c11bf,
+        type: 2}
+      propertyPath: m_text
+      value: "Try to take care with your food reserves, happiness of your crew and
+        your bouyancy. You could be able to become a better pirate. \nSigned:  King
+        of pirates\nPD: Don't forget to say ARR!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 224534948353084728, guid: 76637974c67a0d74d9024fa8480c11bf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224696109000293866, guid: 76637974c67a0d74d9024fa8480c11bf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224188062047401040, guid: 76637974c67a0d74d9024fa8480c11bf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224967837033890666, guid: 76637974c67a0d74d9024fa8480c11bf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224047461270391294, guid: 76637974c67a0d74d9024fa8480c11bf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 224290440423026616, guid: 76637974c67a0d74d9024fa8480c11bf,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76637974c67a0d74d9024fa8480c11bf, type: 2}
   m_IsPrefabAsset: 0
@@ -738,7 +817,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4302717620777126, guid: 5314ac789baea404387a82bccbcaac26, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 212185927925567284, guid: 5314ac789baea404387a82bccbcaac26,
         type: 2}
@@ -800,17 +879,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4752670313297002, guid: 94f6482e8d8065347b82bf84cf983629, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 82792619536851788, guid: 94f6482e8d8065347b82bf84cf983629,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ebdf4a87922461646908d2cc9452cc6a, type: 3}
-    - target: {fileID: 82792619536851788, guid: 94f6482e8d8065347b82bf84cf983629,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f6482e8d8065347b82bf84cf983629, type: 2}

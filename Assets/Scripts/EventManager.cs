@@ -15,6 +15,7 @@ enum ConditionalEvents {
 public class EventManager : MonoBehaviour {
 	public HUDManager hudManager;
 	public ResourceManager resourceManager;
+	public GameLangManager gameLangManager;
 
 	private Event currentEvent;
 	private EventLists events;
@@ -60,16 +61,16 @@ public class EventManager : MonoBehaviour {
 		if (resourceManager.GetHappinessValue() < happinessThreshold && betweenFatalEventsCounter == -1){
 			currentEvent = events.conditionalEvents[(int)ConditionalEvents.LOWHAPPINESS];
 			fatalEventCounter++;
-            Log.instance.ShowMessage("Your crew aren't happy captain!!" + "\n" + fatalEventCounter +" Rage points" );
+            Log.instance.ShowMessage(gameLangManager.GetTextByCode("CREW_NOW_HAPPY") + "\n" + fatalEventCounter + gameLangManager.GetTextByCode("RAGE_POINTS") );
 			betweenFatalEventsCounter++;
 		} else if (resourceManager.GetBuoyancyValue() < buoyancyThreshold && betweenFatalEventsCounter == -1) {
 			currentEvent = events.conditionalEvents[(int)ConditionalEvents.LOWBUOYANCY];
 			fatalEventCounter++;
-            Log.instance.ShowMessage("captain, your ship seems damaged, you can sink!!" + "\n" + fatalEventCounter + " Rage points");
+            Log.instance.ShowMessage(gameLangManager.GetTextByCode("SHIP_DAMAGED") + "\n" + fatalEventCounter + gameLangManager.GetTextByCode("RAGE_POINTS"));
             betweenFatalEventsCounter++;
 		} else if (resourceManager.Food < foodThreshold && betweenFatalEventsCounter == -1){
 			currentEvent = events.conditionalEvents[(int)ConditionalEvents.LOWFOOD];
-            Log.instance.ShowMessage("You can't subsist without food" + "\n" + fatalEventCounter + " Rage points");
+            Log.instance.ShowMessage(gameLangManager.GetTextByCode("NO_FOOD") + "\n" + fatalEventCounter + gameLangManager.GetTextByCode("RAGE_POINTS"));
             fatalEventCounter++;
 			betweenFatalEventsCounter++;
 		} else {
@@ -197,8 +198,6 @@ public class EventManager : MonoBehaviour {
 				default:
 					break;
 			}
-
-            Debug.Log("Recurso: " + balance.type + " tipo " + (int)balance.type);
 		}
 	}
 

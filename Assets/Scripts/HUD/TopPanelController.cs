@@ -67,10 +67,8 @@ public class TopPanelController : MonoBehaviour {
 	public void SetHappinessFace(int h){
 		if (h <= 33){
 			crewHappinessImage.sprite = happinessStates[0];
-            if (Log.instance) Log.instance.ShowMessage("We are angry!!!");
 		} else if (h > 33 && h <= 66){
 			crewHappinessImage.sprite = happinessStates[1];
-            if (Log.instance) Log.instance.ShowMessage("We are not happy!");
 		} else if (h > 66) {
 			crewHappinessImage.sprite = happinessStates[2];
 		}

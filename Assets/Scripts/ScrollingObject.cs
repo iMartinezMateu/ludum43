@@ -6,10 +6,13 @@ public class ScrollingObject : MonoBehaviour {
 
     private Rigidbody2D rb2d;
     public float scrollSpeed;
+    
 
     // Use this for initialization
     void Start()
     {
+
+        
         //Get and store a reference to the Rigidbody2D attached to this GameObject.
         rb2d = GetComponent<Rigidbody2D>();
 

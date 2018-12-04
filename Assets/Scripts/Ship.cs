@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ship : MonoBehaviour {
+	public GameLangManager gameLangManager;
 
     public SpriteRenderer canon1, canon1sin, canon2, canon3, canon3sin;
     public SpriteRenderer crack1, crack2, crack3, mast, mastBroken, sail, sailBroken;
@@ -11,6 +12,8 @@ public class Ship : MonoBehaviour {
 
     private void Start()
     {
+        gameLangManager = GameObject.FindObjectOfType<GameLangManager>();
+
         AudioManager.instance.PlaySong();
         AudioManager.instance.PlaySea();
         sprites.Add(canon1);
@@ -61,7 +64,7 @@ public class Ship : MonoBehaviour {
             mast.gameObject.SetActive(true);
             sailBroken.gameObject.SetActive(true);
 
-            if (Log.instance) Log.instance.ShowMessage("We need more wood t' keep this afloat");
+            if (Log.instance) Log.instance.ShowMessage(gameLangManager.GetTextByCode("NEED_MORE_WOOD"));
         }
         else if (integrity >= 0)
         {
@@ -71,7 +74,7 @@ public class Ship : MonoBehaviour {
             crack3.gameObject.SetActive(true);
             mastBroken.gameObject.SetActive(true);
 
-            if (Log.instance) Log.instance.ShowMessage("We sink!");
+            if (Log.instance) Log.instance.ShowMessage(gameLangManager.GetTextByCode("SHIP_DAMAGED"));
         }
     }
 }

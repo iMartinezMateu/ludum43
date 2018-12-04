@@ -36,13 +36,4 @@ public class Log : MonoBehaviour {
             messageText.text = queue.Dequeue();
         }
     }
-
-    public void Test()
-    {
-        ShowMessage("Al abordaje");
-    }
-    public void Test2()
-    {
-        ShowMessage("A los cañones");
-    }
 }

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Battle : MonoBehaviour {
+	public GameLangManager gameLangManager;
+    static ResourceManager resources;
 
     public int piecesLost, crewLost, bootyLost;
     public int bootyWon;
 
-    static ResourceManager resources;
-
     private void Start()
     {
+        gameLangManager = GameObject.FindObjectOfType<GameLangManager>();
         resources = GameObject.FindObjectOfType<ResourceManager>();
     }
 
@@ -23,7 +24,7 @@ public class Battle : MonoBehaviour {
         
         if (resources.GetPowerValue() > enemyPower)
         {
-            winText = "You Won!";
+            winText = gameLangManager.GetTextByCode("YOU_WON");
             balances = new Balance[]
             {
                 new Balance()
@@ -36,7 +37,7 @@ public class Battle : MonoBehaviour {
 
         else
         {
-            winText = "You lose the battle";
+            winText = gameLangManager.GetTextByCode("YOU_LOSE");
             balances = new Balance[]
             {
                 new Balance()
@@ -61,7 +62,7 @@ public class Battle : MonoBehaviour {
 
         return new Event()
         {
-            text = "Pirate Battle!! \n Your power: " + resources.GetPowerValue() + "\n Enemy power: " + enemyPower + "\n" + winText,
+            text = gameLangManager.GetTextByCode("PIRATE_BATTLE")+"\n"+gameLangManager.GetTextByCode("YOUR_POWER") + resources.GetPowerValue() + "\n" + gameLangManager.GetTextByCode("ENEMY_POWER") + enemyPower + "\n" + winText,
             answers = new EventAnswer[1]
             {
                 new EventAnswer()

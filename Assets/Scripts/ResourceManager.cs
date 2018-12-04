@@ -210,6 +210,7 @@ public class ResourceManager : MonoBehaviour {
 		int foodMultiplier = 2;
 		int rumMultiplier = 4;
 		happiness = (int)((float)((float)(food * foodMultiplier + rum * rumMultiplier) / (float)(crew * crewMultiplier + food * foodMultiplier + rum * rumMultiplier))*100);
+		
 		GameObject.FindObjectOfType<HUDManager>().SetHappinessValue(happiness);
 	}
 

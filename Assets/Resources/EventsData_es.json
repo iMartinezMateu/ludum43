@@ -1,11 +1,11 @@
 {
     "goodEvents": [
         {
-            "text": "You have reached a merchant harbour",
+            "text": "Has alcanzado un puerto mercante",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Repair the ship",
+                    "text": "Reparar el barco",
                     "balances": [
                         {
                             "type": 0,
@@ -18,7 +18,7 @@
                     ]
                 },
                 {
-                    "text": "Buy food",
+                    "text": "Comprar comida",
                     "balances": [
                         {
                             "type": 0,
@@ -31,7 +31,7 @@
                     ]
                 },
                 {
-                    "text": "Buy weapons",
+                    "text": "Comprar armamento",
                     "balances": [
                         {
                             "type": 0,
@@ -46,11 +46,11 @@
             ]
         },
         {
-            "text": "You have reached a pirate harbour",
+            "text": "Has alcanzado un puerto pirata",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Change food for rum",
+                    "text": "Cambiar comida por ron",
                     "balances": [
                         {
                             "type": 4,
@@ -63,7 +63,7 @@
                     ]
                 },
                 {
-                    "text": "Change cannons for rum",
+                    "text": "Cambiar armamento por ron",
                     "balances": [
                         {
                             "type": 5,
@@ -76,7 +76,7 @@
                     ]
                 },
                 {
-                    "text": "Change crew for rum",
+                    "text": "Cambiar tripulacion por ron",
                     "balances": [
                         {
                             "type": 2,
@@ -91,11 +91,11 @@
             ]
         },
         {
-            "text": "You have reached a wild island",
+            "text": "Has alcanzado una isla salvaje",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Cut down trees",
+                    "text": "Talar todos los arboles",
                     "balances": [
                         {
                             "type": 1,
@@ -104,7 +104,7 @@
                     ]
                 },
                 {
-                    "text": "Gather fruits",
+                    "text": "Recoger las frutas",
                     "balances": [
                         {
                             "type": 4,
@@ -113,7 +113,7 @@
                     ]
                 },
                 {
-                    "text": "Hire indigenous",
+                    "text": "Contratar indigenas",
                     "balances": [
                         {
                             "type": 2,
@@ -124,11 +124,11 @@
             ]
         },
         {
-            "text": "Another ship wants to exchange",
+            "text": "Otro barco quiere comercias",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Change rum for food",
+                    "text": "Cambiar ron por comida",
                     "balances": [
                         {
                             "type": 4,
@@ -141,7 +141,7 @@
                     ]
                 },
                 {
-                    "text": "Buy wood",
+                    "text": "Comprar madera",
                     "balances": [
                         {
                             "type": 0,
@@ -154,7 +154,7 @@
                     ]
                 },
                 {
-                    "text": "Fire!",
+                    "text": "Disparad!",
                     "balances": [
                         {
                             "type": 5,
@@ -165,11 +165,11 @@
             ]
         },
         {
-            "text": "You find an abandoned ship",
+            "text": "Has encontrado un barco abandonado",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Search rum",
+                    "text": "Buscar ron",
                     "balances": [
                         {
                             "type": 3,
@@ -178,7 +178,7 @@
                     ]
                 },
                 {
-                    "text": "Steal cannons",
+                    "text": "Robar armamento",
                     "balances": [
                         {
                             "type": 5,
@@ -187,7 +187,7 @@
                     ]
                 },
                 {
-                    "text": "Collect loot",
+                    "text": "Saquear los tesoros",
                     "balances": [
                         {
                             "type": 0,
@@ -198,11 +198,11 @@
             ]
         },
         {
-            "text": "A boat of sailors, survivors of a battle, are approaching",
+            "text": "Un bote de marineros, supervivientes de una batalla, se acerca a ti",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "On board!",
+                    "text": "Todos a bordo!",
                     "balances": [
                         {
                             "type": 2,
@@ -211,7 +211,7 @@
                     ]
                 },
                 {
-                    "text": "Give them food and leave them to their fate",
+                    "text": "Darles comida y abandonarles a su suerte",
                     "balances": [
                         {
                             "type": 4,
@@ -220,7 +220,7 @@
                     ]
                 },
                 {
-                    "text": "Fire!",
+                    "text": "Disparad!",
                     "balances": [
                         {
                             "type": 5,
@@ -231,11 +231,11 @@
             ]
         },
         {
-            "text": "A group of a natives in a canoe offer you a tribute",
+            "text": "Un grupo de nativos en canoa se acerca a ofreceros un tributo",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Accept tribute",
+                    "text": "Aceptar tributo",
                     "balances": [
                         {
                             "type": 4,
@@ -244,7 +244,7 @@
                     ]
                 },
                 {
-                    "text": "I don't understand what they mean *hip*",
+                    "text": "No entiendo nada de lo que quieren decir *hip*",
                     "balances": [
                         {
                             "type": 3,
@@ -253,7 +253,7 @@
                     ]
                 },
                 {
-                    "text": "Fire!",
+                    "text": "Disparad!",
                     "balances": [
                         {
                             "type": 5,
@@ -268,7 +268,7 @@
             ]
         },
         {
-            "text": "The crew finds a floating treasure",
+            "text": "La tripulacion encuentra un tesoro",
             "appearanceProbability": 1,
             "answers": [
                 {
@@ -283,7 +283,7 @@
             ]
         },
         {
-            "text": "The crew finds a floating barrel of rum",
+            "text": "La tripulacion encuentra un barril flotando",
             "appearanceProbability": 1,
             "answers": [
                 {
@@ -300,11 +300,11 @@
     ],
     "badEvents": [
         {
-            "text": "A mermaid has captured the attention of the crew",
+            "text": "Una sirena ha captado la atencion de tu tripulacion",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Let them take away the fools",
+                    "text": "Dejad que capture a los debiles",
                     "balances": [
                         {
                             "type": 2,
@@ -313,7 +313,7 @@
                     ]
                 },
                 {
-                    "text": "Cover the ears and eyes of the crew",
+                    "text": "Cubrirles los ojos y atarles",
                     "balances": [
                         {
                             "type": 1,
@@ -322,7 +322,7 @@
                     ]
                 },
                 {
-                    "text": "Fire!",
+                    "text": "Disparad!",
                     "balances": [
                         {
                             "type": 5,
@@ -333,11 +333,11 @@
             ]
         },
         {
-            "text": "There is a plague of rats",
+            "text": "Hay una plaga de ratas en el barco",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Live with them",
+                    "text": "Vivir con ellas",
                     "balances": [
                         {
                             "type": 4,
@@ -346,7 +346,7 @@
                     ]
                 },
                 {
-                    "text": "Bribe them",
+                    "text": "Sobornarlas",
                     "balances": [
                         {
                             "type": 0,
@@ -355,7 +355,7 @@
                     ]
                 },
                 {
-                    "text": "Fire!",
+                    "text": "Disparad!",
                     "balances": [
                         {
                             "type": 5,
@@ -366,11 +366,11 @@
             ]
         },
         {
-            "text": "One of the sailors has gotten drunk and is causing damage",
+            "text": "Uno de los marineros se ha emborrachado y esta causando estragos",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Throw him overboard",
+                    "text": "Tirarlo por la borda",
                     "balances": [
                         {
                             "type": 2,
@@ -379,7 +379,7 @@
                     ]
                 },
                 {
-                    "text": "Tie him",
+                    "text": "Atarle",
                     "balances": [
                         {
                             "type": 1,
@@ -388,7 +388,7 @@
                     ]
                 },
                 {
-                    "text": "Join him",
+                    "text": "Unirte a la fiesta",
                     "balances": [
                         {
                             "type": 3,
@@ -399,11 +399,11 @@
             ]
         },
         {
-            "text": "The crew is cold at night",
+            "text": "La tripulacion tiene frio por la noche",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Make fire",
+                    "text": "Encender una hoguera",
                     "balances": [
                         {
                             "type": 1,
@@ -412,7 +412,7 @@
                     ]
                 },
                 {
-                    "text": "Nigh fireworks!",
+                    "text": "lanzar fuegos artificiales nocturnos!",
                     "balances": [
                         {
                             "type": 5,
@@ -421,7 +421,7 @@
                     ]
                 },
                 {
-                    "text": "Warm up with the drink",
+                    "text": "Calentarles con bebida",
                     "balances": [
                         {
                             "type": 3,
@@ -432,11 +432,11 @@
             ]
         },
         {
-            "text": "A storm is looming",
+            "text": "Una tormenta se avecina",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "We can pass!",
+                    "text": "Podemos cruzarla!",
                     "balances": [
                         {
                             "type": 2,
@@ -445,7 +445,7 @@
                     ]
                 },
                 {
-                    "text": "Surround it",
+                    "text": "Vamos a bordearla",
                     "balances": [
                         {
                             "type": 4,
@@ -454,7 +454,7 @@
                     ]
                 },
                 {
-                    "text": "Throw the cursed sailor overboard",
+                    "text": "Arrojar por la borda al marinero gafe",
                     "balances": [
                         {
                             "type": 2,
@@ -465,11 +465,11 @@
             ]
         },
         {
-            "text": "The crew demands better distribution of rum",
+            "text": "La tripulacion demanda mayor distribucion de ron",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Let's drink",
+                    "text": "Bebamos!",
                     "balances": [
                         {
                             "type": 3,
@@ -478,7 +478,7 @@
                     ]
                 },
                 {
-                    "text": "Nevah!",
+                    "text": "Nunca!",
                     "balances": [
                         {
                             "type": 2,
@@ -487,40 +487,7 @@
                     ]
                 },
                 {
-                    "text": "Fire!",
-                    "balances": [
-                        {
-                            "type": 5,
-                            "quantity": -13
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "text": "Your parrot has been lost hasn't came back",
-            "appearanceProbability": 1,
-            "answers": [
-                {
-                    "text": "Undertake a search",
-                    "balances": [
-                        {
-                            "type": 4,
-                            "quantity": -13
-                        }
-                    ]
-                },
-                {
-                    "text": "Drink to support the loss",
-                    "balances": [
-                        {
-                            "type": 3,
-                            "quantity": -13
-                        }
-                    ]
-                },
-                {
-                    "text": "Fire a salvo as a tribute",
+                    "text": "Disparad!",
                     "balances": [
                         {
                             "type": 5,
@@ -531,53 +498,11 @@
             ]
         },
         {
-            "text": "Some sailor has spent all the toilet paper and has not replaced",
+            "text": "Tu loro se ha perdido y no ha vuelto",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "I'm sure rum will clean it",
-                    "balances": [
-                        {
-                            "type": 3,
-                            "quantity": -13
-                        }
-                    ]
-                },
-                {
-                    "text": "Throw the suspicious sailor to the sharks",
-                    "balances": [
-                        {
-                            "type": 2,
-                            "quantity": -13
-                        }
-                    ]
-                },
-                {
-                    "text": "Make a craft paper with fruit skin",
-                    "balances": [
-                        {
-                            "type": 4,
-                            "quantity": -13
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "text": "Sailors get bored, they need something to kill time",
-            "appearanceProbability": 1,
-            "answers": [
-                {
-                    "text": "Let's drink",
-                    "balances": [
-                        {
-                            "type": 3,
-                            "quantity": -13
-                        }
-                    ]
-                },
-                {
-                    "text": "Let's eat",
+                    "text": "Emprender una busqueda",
                     "balances": [
                         {
                             "type": 4,
@@ -586,7 +511,16 @@
                     ]
                 },
                 {
-                    "text": "Fire!",
+                    "text": "Beber para soportar la perdida",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Disparar una salva en su memoria",
                     "balances": [
                         {
                             "type": 5,
@@ -597,11 +531,20 @@
             ]
         },
         {
-            "text": "You navigate directly to a whirlpool",
+            "text": "Algún marinero ha gastado todo el papel de baño y no ha repuesto",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Throw some sailors overboard to calm the god of the wind",
+                    "text": "Estoy seguro que el ron limpia!",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Lanzar a los tiburones al marinero sospechoso",
                     "balances": [
                         {
                             "type": 2,
@@ -610,7 +553,64 @@
                     ]
                 },
                 {
-                    "text": "Enjoy a good water attraction",
+                    "text": "Elaborar un papel artesano con piel de frutas",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Los marineros se aburren, necesitan matar el tiempo",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Bebamos!",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Comamos!",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Disparad!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Navegas directo a un remolino",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Lanzar algunos marineros para aplacar al Dios del viento",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Disfrutar de las vistas",
                     "balances": [
                         {
                             "type": 1,
@@ -619,7 +619,7 @@
                     ]
                 },
                 {
-                    "text": "Turn around",
+                    "text": "Dar media vuelta o una entera",
                     "balances": [
                         {
                             "type": 4,
@@ -630,7 +630,7 @@
             ]
         },
         {
-            "text": "A giant wave has dragged part of your crew",
+            "text": "Una ola gigante se ha llevado parte de tu tripulacion",
             "appearanceProbability": 1,
             "answers": [
                 {
@@ -645,7 +645,7 @@
             ]
         },
         {
-            "text": "A storm has broken part of the shell",
+            "text": "Una tormenta ha roto parte de tu barco",
             "appearanceProbability": 1,
             "answers": [
                 {
@@ -662,11 +662,11 @@
     ],
     "conditionalEvents": [
         {
-            "text": "Your crew is hungry ... and has scurvy",
+            "text": "Tu tripulacion tiene hambre y padece de escorbuto",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Make them eat wood",
+                    "text": "Hacerles comer madera",
                     "balances": [
                         {
                             "type": 1,
@@ -675,7 +675,7 @@
                     ]
                 },
                 {
-                    "text": "Try to cure it with rum",
+                    "text": "Intentar sanarlos con ron",
                     "balances": [
                         {
                             "type": 3,
@@ -684,7 +684,7 @@
                     ]
                 },
                 {
-                    "text": "Pirates have vitamin C?",
+                    "text": "Los piratas tienen vitamina C?",
                     "balances": [
                         {
                             "type": 2,
@@ -695,11 +695,11 @@
             ]
         },
         {
-            "text": "Your crew mutinies",
+            "text": "Tu tripulacion se amotina",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Say: It was him",
+                    "text": "Decir: Ha sido culpa de el",
                     "balances": [
                         {
                             "type": 2,
@@ -708,7 +708,7 @@
                     ]
                 },
                 {
-                    "text": "Bribe the coolest crew",
+                    "text": "Sobornar al tripulante mas molon",
                     "balances": [
                         {
                             "type": 0,
@@ -717,7 +717,7 @@
                     ]
                 },
                 {
-                    "text": "Fire!",
+                    "text": "Disparad!",
                     "balances": [
                         {
                             "type": 5,
@@ -732,11 +732,11 @@
             ]
         },
         {
-            "text": "The ship begins to sink",
+            "text": "El barco empieza a hundirse!!!",
             "appearanceProbability": 1,
             "answers": [
                 {
-                    "text": "Put the crew to bail water",
+                    "text": "Ordenar a la tripulacion achicar agua",
                     "balances": [
                         {
                             "type": 2,
@@ -745,7 +745,7 @@
                     ]
                 },
                 {
-                    "text": "Cover the holes with barrels",
+                    "text": "Cubrir los agujeros con barriles",
                     "balances": [
                         {
                             "type": 3,
@@ -754,7 +754,7 @@
                     ]
                 },
                 {
-                    "text": "Throw weight overboard",
+                    "text": "Lanzar sobrepeso por la borda",
                     "balances": [
                         {
                             "type": 5,
