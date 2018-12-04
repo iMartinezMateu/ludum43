@@ -290,7 +290,7 @@
                     "text": "Yaaaay!!",
                     "balances": [
                         {
-                            "type": 1,
+                            "type": 3,
                             "quantity": 27
                         }
                     ]
