@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
+	public Sprite[] langImages;
+	public Image langButton;
 
 	public Slider effectVolume;
-
 	public Slider musicVolume;
 	
 	[SerializeField]
@@ -43,6 +44,17 @@ public class MenuController : MonoBehaviour
 		PlayerPrefs.SetFloat("EffectsVolume",n);
 		PlayerPrefs.Save();
 		
+	}
+
+	public void ToggleLang(){
+		if (GameManager.instance.currentLang == "en"){
+			GameManager.instance.currentLang = "es";
+			langButton.sprite = langImages[1];
+		} else {
+			GameManager.instance.currentLang = "en";
+			langButton.sprite = langImages[0];
+		}
+		this.GetComponent<MenuLangController>().RefreshMenuLang();
 	}
 
 	public void ChangePanel(string scene){

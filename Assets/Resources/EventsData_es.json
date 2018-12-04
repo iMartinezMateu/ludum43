@@ -1,0 +1,768 @@
+{
+    "goodEvents": [
+        {
+            "text": "You have reached a merchant harbour",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Repair the ship",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -5
+                        },
+                        {
+                            "type": 1,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "Buy food",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -5
+                        },
+                        {
+                            "type": 4,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "Buy weapons",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -5
+                        },
+                        {
+                            "type": 5,
+                            "quantity": 27
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "You have reached a pirate harbour",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Change food for rum",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -5
+                        },
+                        {
+                            "type": 3,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "Change cannons for rum",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -5
+                        },
+                        {
+                            "type": 4,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "Change crew for rum",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -5
+                        },
+                        {
+                            "type": 4,
+                            "quantity": 27
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "You have reached a wild island",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Cut down trees",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "Gather fruits",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "Hire indigenous",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": 27
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Another ship wants to exchange",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Change rum for food",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": 27
+                        },
+                        {
+                            "type": 3,
+                            "quantity": -6
+                        }
+                    ]
+                },
+                {
+                    "text": "Buy wood",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -5
+                        },
+                        {
+                            "type": 1,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "Fire!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -9
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "You find an abandoned ship",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Search rum",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "Steal cannons",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "Collect loot",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": 27
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "A boat of sailors, survivors of a battle, are approaching",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "On board!",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "Give them food and leave them to their fate",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -9
+                        }
+                    ]
+                },
+                {
+                    "text": "Fire!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -9
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "A group of a natives in a canoe offer you a tribute",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Accept tribute",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": 27
+                        }
+                    ]
+                },
+                {
+                    "text": "I don't understand what they mean *hip*",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -9
+                        }
+                    ]
+                },
+                {
+                    "text": "Fire!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -9
+                        },
+                        {
+                            "type": 1,
+                            "quantity": 27
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "The crew finds a floating treasure",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Yaaay!",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": 27
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "The crew finds a floating barrel of rum",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Yaaaay!!",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": 27
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "badEvents": [
+        {
+            "text": "A mermaid has captured the attention of the crew",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Let them take away the fools",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Cover the ears and eyes of the crew",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Fire!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "There is a plague of rats",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Live with them",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Bribe them",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Fire!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "One of the sailors has gotten drunk and is causing damage",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Throw him overboard",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Tie him",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Join him",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "The crew is cold at night",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Make fire",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Nigh fireworks!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Warm up with the drink",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "A storm is looming",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "We can pass!",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Surround it",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Throw the cursed sailor overboard",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "The crew demands better distribution of rum",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Let's drink",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Nevah!",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Fire!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Your parrot has been lost hasn't came back",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Undertake a search",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Drink to support the loss",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Fire a salvo as a tribute",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Some sailor has spent all the toilet paper and has not replaced",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "I'm sure rum will clean it",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Throw the suspicious sailor to the sharks",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Make a craft paper with fruit skin",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Sailors get bored, they need something to kill time",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Let's drink",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Let's eat",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Fire!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "You navigate directly to a whirlpool",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Throw some sailors overboard to calm the god of the wind",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Enjoy a good water attraction",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Turn around",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "A giant wave has dragged part of your crew",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Oh! No!",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "A storm has broken part of the shell",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Oh! No!",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "conditionalEvents": [
+        {
+            "text": "Your crew is hungry ... and has scurvy",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Make them eat wood",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Try to cure it with rum",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Pirates have vitamin C?",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Your crew mutinies",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Say: It was him",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Bribe the coolest crew",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Fire!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        },
+                        {
+                            "type": 2,
+                            "quantity": -9
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "The ship begins to sink",
+            "appearanceProbability": 1,
+            "answers": [
+                {
+                    "text": "Put the crew to bail water",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Cover the holes with barrels",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -13
+                        }
+                    ]
+                },
+                {
+                    "text": "Throw weight overboard",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -13
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

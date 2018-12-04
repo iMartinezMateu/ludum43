@@ -49,7 +49,7 @@ public class EventManager : MonoBehaviour {
 	private int fatalEventsToLose;
 
 	void Start () {
-		events = JsonMapper.ToObject<EventLists> (Resources.Load<TextAsset> ("EventsData").text);
+		events = JsonMapper.ToObject<EventLists> (Resources.Load<TextAsset> ("EventsData_"+GameManager.instance.currentLang).text);
 
 		hudManager.AddClickEventOption (OnTriggerActionButton);
 
