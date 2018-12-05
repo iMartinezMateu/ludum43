@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Battle : MonoBehaviour {
-	public GameLangManager gameLangManager;
-    static ResourceManager resources;
+	private GameLangManager gameLangManager;
+    private ResourceManager resources;
 
     public int piecesLost, crewLost, bootyLost;
     public int bootyWon;
@@ -17,12 +17,11 @@ public class Battle : MonoBehaviour {
 
     public Event Fight()
     {
-
         int enemyPower = Random.Range(100, 200);
         string winText = "";
         Balance[] balances = new Balance[0];
         
-        if (resources.GetPowerValue() > enemyPower)
+        if (resources.GetResource(ResourceType.POWER) > enemyPower)
         {
             winText = gameLangManager.GetTextByCode("YOU_WON");
             balances = new Balance[]
@@ -34,7 +33,6 @@ public class Battle : MonoBehaviour {
                 }
             };
         }
-
         else
         {
             winText = gameLangManager.GetTextByCode("YOU_LOSE");
@@ -58,21 +56,21 @@ public class Battle : MonoBehaviour {
             };
         }
 
-
-
         return new Event()
         {
-            text = gameLangManager.GetTextByCode("PIRATE_BATTLE")+"\n"+gameLangManager.GetTextByCode("YOUR_POWER") + resources.GetPowerValue() + "\n" + gameLangManager.GetTextByCode("ENEMY_POWER") + enemyPower + "\n" + winText,
+            text = gameLangManager.GetTextByCode("PIRATE_BATTLE") + "\n" + 
+                gameLangManager.GetTextByCode("YOUR_POWER") +  resources.GetResource(ResourceType.POWER) + "\n" + 
+                gameLangManager.GetTextByCode("ENEMY_POWER") + enemyPower + "\n" + 
+                winText,
             answers = new EventAnswer[1]
             {
                 new EventAnswer()
                 {
-                    text="OK",
+                    text = "OK",
                     balances = balances
                 }
             }
         };
-
 
     }
 

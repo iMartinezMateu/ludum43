@@ -3,5 +3,5 @@
 public class EventLists  {
 	public Event[] goodEvents;
 	public Event[] badEvents;
-	public Event[] conditionalEvents;
+	public LowResourceEvent[] conditionalEvents;
 }

@@ -111,7 +111,6 @@ public class TopPanelController : MonoBehaviour,IPointerEnterHandler, IPointerEx
 	
 	public void OnPointerEnter(PointerEventData eventData) {
 		if (eventData.pointerCurrentRaycast.gameObject != null && !eventData.pointerCurrentRaycast.gameObject.name.Equals("TopPanel") ) {
-			Debug.Log(eventData.pointerCurrentRaycast.gameObject.name);
 			currentHover = eventData.pointerCurrentRaycast.gameObject;
 		}
 	}

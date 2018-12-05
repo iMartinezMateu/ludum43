@@ -30,18 +30,20 @@ public class HUDRanking : MonoBehaviour {
         CalculeGloryPoints();
         SetText();
     }
+
     private void CalculeGloryPoints()
     {
         float foodFactor = myResourceManager.Food *1.2f;
         float ronFactor = myResourceManager.Rum * 1.5f;
         float tripulationFactor = myResourceManager.Crew * 1.5f;
         float woodFactor = myResourceManager.Pieces * 2f;
-        float shipPowerFactor= myResourceManager.GetPowerValue() * 1.2f;
+        float shipPowerFactor= myResourceManager.GetResource(ResourceType.POWER) * 1.2f;
         float goldFactor = myResourceManager.Booty;
         float arrrrPoints = myEventManager.arrrrCounter *3;
         gloryPoints = (int)(foodFactor + ronFactor + tripulationFactor + woodFactor + shipPowerFactor + goldFactor + arrrrPoints);
 
     }
+
     private void SetText()
     {
         infoRankingText.text = playerName.text + ":  "+"x "+myEventManager.arrrrCounter +" Arr = " + gloryPoints + " Glory Points";

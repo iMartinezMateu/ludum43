@@ -42,9 +42,11 @@ public class GameLangManager : MonoBehaviour {
 
 	public string GetTextByCode(string code){
 		if (GameManager.instance.currentLang == "en"){
-			return dictionary_en[code];
+			if (dictionary_en.ContainsKey(code)) return dictionary_en[code];
+			else return code;
 		} else {
-			return dictionary_es[code];
+			if (dictionary_es.ContainsKey(code)) return dictionary_es[code];
+			else return code;
 		}
 	}
 }

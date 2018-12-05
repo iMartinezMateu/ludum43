@@ -8,12 +8,17 @@ public enum ResourceType {
 	CREW = 2,
 	RUM = 3,
 	FOOD = 4,
-	GUNS = 5
+	GUNS = 5,
+	HAPPINESS = 6,
+	BUOYANCY = 7,
+	POWER = 8
 }
 
 public class ResourceManager : MonoBehaviour {
 	public HUDManager hudManager;
     public ParticleManager particleManager;
+	public EventManager eventManager;
+	public GameLangManager gameLangManager;
 
 	[SerializeField]
 	private int booty = 0;
@@ -142,6 +147,10 @@ public class ResourceManager : MonoBehaviour {
 
             food = value;
 
+			if (food < eventManager.warningEventsThresholds[(int)ResourceType.FOOD]){
+				Log.instance.ShowMessage(gameLangManager.GetTextByCode("NO_FOOD"));
+			}
+
             if (food < 0) food = 0;
 			else if (food > 999) food = 999;
 			UpdateHappiness ();
@@ -188,22 +197,23 @@ public class ResourceManager : MonoBehaviour {
 			case ResourceType.RUM:
 				ret = rum;
 			break;
+			case ResourceType.HAPPINESS:
+				ret = happiness;
+			break;
+			case ResourceType.BUOYANCY:
+				ret = buoyancy;
+			break;
+			case ResourceType.POWER:
+				ret = power;
+			break;
 			default: break;
 		}
 		return ret;
 	}
 
-	public int GetHappinessValue () {
-		return happiness;
-	}
+	#endregion
 
-	public int GetBuoyancyValue () {
-		return buoyancy;
-	}
-
-	public int GetPowerValue () {
-		return power;
-	}
+	#region private methods
 
 	private void UpdateHappiness () {
 		int crewMultiplier = 1;
@@ -211,6 +221,10 @@ public class ResourceManager : MonoBehaviour {
 		int rumMultiplier = 4;
 		happiness = (int)((float)((float)(food * foodMultiplier + rum * rumMultiplier) / (float)(crew * crewMultiplier + food * foodMultiplier + rum * rumMultiplier))*100);
 		
+		if (happiness < eventManager.warningEventsThresholds[(int)ResourceType.HAPPINESS]){
+			Log.instance.ShowMessage(gameLangManager.GetTextByCode("CREW_NOT_HAPPY"));
+		}
+
 		GameObject.FindObjectOfType<HUDManager>().SetHappinessValue(happiness);
 	}
 
@@ -219,6 +233,11 @@ public class ResourceManager : MonoBehaviour {
 		int crewMultiplier = 2;
 		int gunMultiplier = 1;
 		buoyancy = (int)((float)((float)(pieces * piecesMultiplier) / (float)(pieces * piecesMultiplier + crew * crewMultiplier + guns * gunMultiplier))*100);
+		
+		if (buoyancy < eventManager.warningEventsThresholds[(int)ResourceType.BUOYANCY]){
+			Log.instance.ShowMessage(gameLangManager.GetTextByCode("SHIP_DAMAGED"));
+		}
+		
 		GameObject.FindObjectOfType<Ship>().RefreshStat((float)buoyancy/100);
 	}
 

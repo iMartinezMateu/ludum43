@@ -6,51 +6,46 @@ using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-enum ConditionalEvents {
-	LOWHAPPINESS = 0,
-	LOWBUOYANCY = 1,
-	LOWFOOD = 2
-}
-
 public class EventManager : MonoBehaviour {
 	public HUDManager hudManager;
 	public ResourceManager resourceManager;
-	public GameLangManager gameLangManager;
 
-	private Event currentEvent;
 	private EventLists events;
+	private Event currentEvent;
+	private int currentEventArrrrIndex;
 
 	[NonSerialized]
 	public int eventCounter;
 	[NonSerialized]
-	public int fatalEventCounter;
-	[NonSerialized]
 	public int arrrrCounter;
 
-	private int currentEventArrrrIndex = 0;
-	private int betweenFatalEventsCounter = -1;
-
+	[Header("General event properties")]
 	[SerializeField]
 	private int secondsBetweenEvents;
+
+	[Header("Food Properties")]
+	[SerializeField]
+	private int foodLostInEveryEvent;
+
+	[Header("Event probabilities")]
 	[SerializeField]
 	private int badEventsProbability;
     [SerializeField]
     private int battleEventsProbability;
-    [SerializeField]
-	private int normalEventsBetweenFatalEvents;
+
+	[Header("WarningEvents")]
 	[SerializeField]
-	private int foodLostInEveryEvent;
-	[SerializeField]
-	private int happinessThreshold;
-	[SerializeField]
-	private int buoyancyThreshold;
-	[SerializeField]
-	private int foodThreshold;
-	[SerializeField]
-	private int fatalEventsToLose;
+	public int[] warningEventsThresholds;
+	[NonSerialized]
+	public bool[] warningEventsTriggered;
 
 	void Start () {
 		events = JsonMapper.ToObject<EventLists> (Resources.Load<TextAsset> ("EventsData_"+GameManager.instance.currentLang).text);
+
+		warningEventsTriggered = new bool[warningEventsThresholds.Length];
+		for (int i = 0; i < warningEventsTriggered.Length; i++){
+			warningEventsTriggered[i] = false;
+		}
 
 		hudManager.AddClickEventOption (OnTriggerActionButton);
 
@@ -58,82 +53,16 @@ public class EventManager : MonoBehaviour {
 	}
 
 	private IEnumerator InvokeEvent () {
-		if (resourceManager.GetHappinessValue() < happinessThreshold && betweenFatalEventsCounter == -1){
-			currentEvent = events.conditionalEvents[(int)ConditionalEvents.LOWHAPPINESS];
-			fatalEventCounter++;
-            Log.instance.ShowMessage(gameLangManager.GetTextByCode("CREW_NOW_HAPPY") + "\n" + fatalEventCounter + gameLangManager.GetTextByCode("RAGE_POINTS") );
-			betweenFatalEventsCounter++;
-		} else if (resourceManager.GetBuoyancyValue() < buoyancyThreshold && betweenFatalEventsCounter == -1) {
-			currentEvent = events.conditionalEvents[(int)ConditionalEvents.LOWBUOYANCY];
-			fatalEventCounter++;
-            Log.instance.ShowMessage(gameLangManager.GetTextByCode("SHIP_DAMAGED") + "\n" + fatalEventCounter + gameLangManager.GetTextByCode("RAGE_POINTS"));
-            betweenFatalEventsCounter++;
-		} else if (resourceManager.Food < foodThreshold && betweenFatalEventsCounter == -1){
-			currentEvent = events.conditionalEvents[(int)ConditionalEvents.LOWFOOD];
-            Log.instance.ShowMessage(gameLangManager.GetTextByCode("NO_FOOD") + "\n" + fatalEventCounter + gameLangManager.GetTextByCode("RAGE_POINTS"));
-            fatalEventCounter++;
-			betweenFatalEventsCounter++;
-		} else {
-			int type = Random.Range (0, 100);
-			if (type < badEventsProbability) {
-				int index = Random.Range (0, events.badEvents.Length);
-				currentEvent = events.badEvents[index];
-			} else if (type > badEventsProbability+battleEventsProbability) {
-				int index = Random.Range (0, events.goodEvents.Length);
-				currentEvent = events.goodEvents[index];
-			}
-            else
-            {
-                currentEvent = GameObject.FindObjectOfType<Battle>().Fight();
+		Event nextEvent = SelectNextEvent();
+		
+		yield return new WaitForSeconds (secondsBetweenEvents);
 
-            }
-			if (betweenFatalEventsCounter > -1) {
-				betweenFatalEventsCounter++;
-				if (betweenFatalEventsCounter == normalEventsBetweenFatalEvents){
-					betweenFatalEventsCounter = -1;
-				}
-			}
-		}
-
-		if (fatalEventCounter >= fatalEventsToLose){
-            GameObject.FindObjectOfType<HUDManager>().ShowDead();
-            
-		} else {
-			yield return new WaitForSeconds (secondsBetweenEvents);
-
-			int negativeCount = 0;
-			List<string> options = new List<string> ();
-			foreach (EventAnswer answer in currentEvent.answers) {
-				string answerText = answer.text;
-				if (checkNegativeBalances(answer)) {
-					answerText += "[disabled]";
-					negativeCount++;
-				}
-				options.Add (answerText);
-			}
-
-			if (options.Count == negativeCount){
-				GameObject.FindObjectOfType<HUDManager>().ShowDead();
-			}
-
-			if (options.Count > 1){
-				int arrrrAnswer = findArrrrAnswer();
-				currentEventArrrrIndex = arrrrAnswer;
-				options[arrrrAnswer] += "[arrrr]";
-			}
-
-			hudManager.ShowEvent (currentEvent.text, options);
-
-			eventCounter++;
-		}
+		ProcessEvent(nextEvent);
 	}
 
 	private void OnTriggerActionButton (int n) {
 		AudioManager.instance.PlayAnswer1();
-		ProcessResources (currentEvent.answers[n]);
-		if (n == currentEventArrrrIndex) {
-			arrrrCounter++;
-		}
+		ProcessResources (n);
 		StartCoroutine (InvokeEvent ());
 	}
 
@@ -146,14 +75,64 @@ public class EventManager : MonoBehaviour {
 		return false;
 	}
 
+	private void ProcessEvent(Event ev){
+		int negativeCount = 0;
+		List<string> options = new List<string> ();
+		foreach (EventAnswer answer in ev.answers) {
+			string answerText = answer.text;
+			if (checkNegativeBalances(answer)) {
+				answerText += "[disabled]";
+				negativeCount++;
+			}
+			options.Add (answerText);
+		}
+
+		if (options.Count == negativeCount){
+			GameObject.FindObjectOfType<HUDManager>().ShowDead();
+			return;
+		}
+
+		if (options.Count > 1){
+			int arrrrAnswer = findArrrrAnswer(ev);
+			currentEventArrrrIndex = arrrrAnswer;
+			options[arrrrAnswer] += "[arrrr]";
+		}
+
+		hudManager.ShowEvent (ev.text, options);
+
+		currentEvent = ev;
+		eventCounter++;
+	}
+	
+	private Event SelectNextEvent(){
+		foreach (LowResourceEvent e in events.conditionalEvents){
+			if (resourceManager.GetResource(e.type) < warningEventsThresholds[(int)e.type] && !warningEventsTriggered[(int)e.type]){
+				warningEventsTriggered[(int)e.type] = true;
+				return e;
+			}
+		}
+
+		int type = Random.Range (0, 100);
+		if (type < badEventsProbability) {
+			int index = Random.Range (0, events.badEvents.Length);
+			return events.badEvents[index];
+		} else if (type > badEventsProbability+battleEventsProbability) {
+			int index = Random.Range (0, events.goodEvents.Length);
+			return events.goodEvents[index];
+		} else {
+			return GameObject.FindObjectOfType<Battle>().Fight();
+
+		}
+	}
+
 	//Obtener la respuesta que mas joda al jugador
-	private int findArrrrAnswer() {
+	private int findArrrrAnswer(Event ev) {
 		int currentAnswerIndex = 0;
 		int newQuantity = int.MaxValue;
 
-		for (int i = 0; i < currentEvent.answers.Length; i++) {
-			for (int j = 0; j < currentEvent.answers[i].balances.Length; j++){
-				Balance b = currentEvent.answers[i].balances[j];
+		for (int i = 0; i < ev.answers.Length; i++) {
+			for (int j = 0; j < ev.answers[i].balances.Length; j++){
+				Balance b = ev.answers[i].balances[j];
 				if (b.type != ResourceType.BOOTY && resourceManager.GetResource(b.type) + b.quantity < newQuantity){
 					currentAnswerIndex = i;
 					newQuantity = resourceManager.GetResource(b.type) + b.quantity;
@@ -164,12 +143,15 @@ public class EventManager : MonoBehaviour {
 		return currentAnswerIndex;
 	}
 
-	private void ProcessResources (EventAnswer ea) {
+	//Procesar los recursos
+	private void ProcessResources (int n) {
+		//Process Arrrr
+		if (n == currentEventArrrrIndex) arrrrCounter++;
 		//Food lost in Every Event
 		resourceManager.Food -= foodLostInEveryEvent;
 		hudManager.SetValue (ResourceType.FOOD, resourceManager.Food);
 		//More
-		foreach (Balance balance in ea.balances) {
+		foreach (Balance balance in currentEvent.answers[n].balances) {
 			switch (balance.type) {
 				case ResourceType.RUM:
 					resourceManager.Rum += balance.quantity;

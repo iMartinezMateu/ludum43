@@ -1,15 +1,270 @@
 {
     "goodEvents": [
+		{
+            "text": "Has vivido el acontecimiento del titanic delante de ti",
+            "answers": [
+                {
+                    "text": "Salvar a Jack y reclutar a los supervivientes",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Jack cabe en la tabla, debemos coger objetos de valor que se hunden",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Disparad!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -15
+                        }
+                    ]
+                }
+            ]
+        },
         {
+            "text": "Parece que eres reconocido, varios piratas te han ofrecido sus tributos",
+            "answers": [
+                {
+                    "text": "Aceptarlos",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": 20
+                        },
+						{
+                            "type": 3,
+                            "quantity": 20
+                        }
+                    ]
+                },
+                {
+                    "text": "Coger la mitad, soy un pirata bondadoso",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": 10
+                        },
+						{
+                            "type": 3,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Exigir el doble, contigo no se juega!",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": 40
+                        },
+						{
+                            "type": 1,
+                            "quantity": 40
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "text": "El temido Barba Negra os quiere hacer una visita. Tened cuidado, los piratas no son de fiar.",
+            "answers": [
+                {
+                    "text": "Ofrecerle ron a cambio de armamento",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -20
+                        },
+						{
+                            "type": 5,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Disparad!, bueno, mejor comida por armamento",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -20
+                        },
+						{
+                            "type": 5,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Comprarle un nuevo barco que acaba de capturar",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -50
+                        },
+						{
+                            "type": 1,
+                            "quantity": 30
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "text": "Has encontrado isla tortuga, una famosa isla pirata",
+            "answers": [
+                {
+                    "text": "Contratar marineros de pelo en pecho",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Robarle a Jack Sparrow, el de la pelicula.",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Comprar un poco de ron hecho de sudor de pirata",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -15
+                        },
+						{
+                            "type": 3,
+                            "quantity": 10
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "text": "Un barco hecho de oro llevado por el viento pasa por tu lado",
+            "answers": [
+                {
+                    "text": "Disparad!",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "Arañar un poco la cubierta",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Ofrecerle un tributo de oro",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -10
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "text": "Un barco de vacaciones del inserso pasa por vuestro lado",
+            "answers": [
+                {
+                    "text": "Robarles todo el ron que tengan",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Reclutar sabios y experimentados marineros",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Dejar que vuestros más viejos marineros se unan a ellos",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -15
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "text": "Sin daros cuenta, os encontráis en el artico. Vuestro contramaestre os pregunta que hacer.",
+            "answers": [
+                {
+                    "text": "Cazar unas cuantas ballenas",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": 10
+                        },
+						{
+                            "type": 5,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "Buscar el tesoro escondido del pirata barba blanca",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": 10
+                        }
+                    ]
+                },
+                {
+                    "text": "Reclutar esquimales",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": 10
+                        }
+                    ]
+                }
+            ]
+        },
+		{
             "text": "Has alcanzado un puerto mercante",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Reparar el barco",
                     "balances": [
                         {
                             "type": 0,
-                            "quantity": -5
+                            "quantity": -15
                         },
                         {
                             "type": 1,
@@ -22,7 +277,7 @@
                     "balances": [
                         {
                             "type": 0,
-                            "quantity": -5
+                            "quantity": -15
                         },
                         {
                             "type": 4,
@@ -35,7 +290,7 @@
                     "balances": [
                         {
                             "type": 0,
-                            "quantity": -5
+                            "quantity": -15
                         },
                         {
                             "type": 5,
@@ -47,14 +302,13 @@
         },
         {
             "text": "Has alcanzado un puerto pirata",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Cambiar comida por ron",
                     "balances": [
                         {
                             "type": 4,
-                            "quantity": -5
+                            "quantity": -15
                         },
                         {
                             "type": 3,
@@ -67,7 +321,7 @@
                     "balances": [
                         {
                             "type": 5,
-                            "quantity": -5
+                            "quantity": -15
                         },
                         {
                             "type": 4,
@@ -80,7 +334,7 @@
                     "balances": [
                         {
                             "type": 2,
-                            "quantity": -5
+                            "quantity": -15
                         },
                         {
                             "type": 4,
@@ -92,7 +346,6 @@
         },
         {
             "text": "Has alcanzado una isla salvaje",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Talar todos los arboles",
@@ -125,7 +378,6 @@
         },
         {
             "text": "Otro barco quiere comercias",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Cambiar ron por comida",
@@ -166,7 +418,6 @@
         },
         {
             "text": "Has encontrado un barco abandonado",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Buscar ron",
@@ -199,7 +450,6 @@
         },
         {
             "text": "Un bote de marineros, supervivientes de una batalla, se acerca a ti",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Todos a bordo!",
@@ -232,7 +482,6 @@
         },
         {
             "text": "Un grupo de nativos en canoa se acerca a ofreceros un tributo",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Aceptar tributo",
@@ -269,7 +518,6 @@
         },
         {
             "text": "La tripulacion encuentra un tesoro",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Yaaay!",
@@ -284,7 +532,6 @@
         },
         {
             "text": "La tripulacion encuentra un barril flotando",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Yaaaay!!",
@@ -298,10 +545,225 @@
             ]
         }
     ],
-    "badEvents": [
+    "badEvents": [		
+		{
+            "text": "Los marineros piden parte del tesoro, quieren comprarse cosas bonitas",
+            "answers": [
+                {
+                    "text": "Nunca!",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "Darles el doble, se lo merecen",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -40
+                        },
+						{
+                            "type": 2,
+                            "quantity": 5
+                        }
+                    ]
+                },
+                {
+                    "text": "Aceptar el pago",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -20
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "text": "Algun marinero ha mojado toda la polvora y ahora parte de tu armamento esta inservible",
+            "answers": [
+                {
+                    "text": "Usar ron en vez de polvora!",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -15
+                        },
+						{
+                            "type": 5,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "Castigarle por su torpeza, arrojadle y a sus amigos!",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -15
+                        },
+						{
+                            "type": 5,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "No pasa nada, estas perdonado",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -15
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "text": "La Reina Victoria ha enviado una flota contra ti, eres un pirata temible",
+            "answers": [
+                {
+                    "text": "Disparad!",
+                    "balances": [
+                        {
+                            "type": 5,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "Tengo demasiada carga, arrojad a los debiles!",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "Ofreced te, con ron, a los enemigos",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -15
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "text": "Tu instinto pirata te dice que alguien esta a punto de traicionarte!",
+            "answers": [
+                {
+                    "text": "Beber ron y olvidarse",
+                    "balances": [
+                        {
+                            "type": 3,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "Arrojad a unos cuantos marineros, seguro que aciertas",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "Aumentarles las raciones de comida, un estomago lleno es mas fiable",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -15
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "text": "La brujula ha dejado de funcionar en esta niebla tan espesa, debes tomar el rumbo adecuado",
+            "answers": [
+                {
+                    "text": "Adentrarse al este, donde se escucha fuerte oleaje",
+                    "balances": [
+                        {
+                            "type": 1,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "Dejar que el viento te lleve, siempre te ha funcionado",
+                    "balances": [
+                        {
+                            "type": 4,
+                            "quantity": -15
+                        }
+                    ]
+                },
+                {
+                    "text": "Siempre hay gafes...Arrojadlos!",
+                    "balances": [
+                        {
+                            "type": 2,
+                            "quantity": -15
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "text": "Parece que eres reconocido, varios piratas te han pedido sus tributos",
+            "answers": [
+                {
+                    "text": "Aceptarlos",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -20
+                        },
+						{
+                            "type": 3,
+                            "quantity": -20
+                        }
+                    ]
+                },
+                {
+                    "text": "Coged la mitad, soy un pirata bondadoso",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -10
+                        },
+						{
+                            "type": 3,
+                            "quantity": -10
+                        }
+                    ]
+                },
+                {
+                    "text": "Exigir el doble, contigo no se juega!",
+                    "balances": [
+                        {
+                            "type": 0,
+                            "quantity": -40
+                        },
+						{
+                            "type": 1,
+                            "quantity": -40
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "text": "Una sirena ha captado la atencion de tu tripulacion",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Dejad que capture a los debiles",
@@ -334,7 +796,6 @@
         },
         {
             "text": "Hay una plaga de ratas en el barco",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Vivir con ellas",
@@ -367,7 +828,6 @@
         },
         {
             "text": "Uno de los marineros se ha emborrachado y esta causando estragos",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Tirarlo por la borda",
@@ -400,7 +860,6 @@
         },
         {
             "text": "La tripulacion tiene frio por la noche",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Encender una hoguera",
@@ -433,7 +892,6 @@
         },
         {
             "text": "Una tormenta se avecina",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Podemos cruzarla!",
@@ -466,7 +924,6 @@
         },
         {
             "text": "La tripulacion demanda mayor distribucion de ron",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Bebamos!",
@@ -499,7 +956,6 @@
         },
         {
             "text": "Tu loro se ha perdido y no ha vuelto",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Emprender una busqueda",
@@ -532,7 +988,6 @@
         },
         {
             "text": "Algun marinero ha gastado todo el papel de wc y no ha repuesto",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Estoy seguro que el ron limpia!",
@@ -565,7 +1020,6 @@
         },
         {
             "text": "Los marineros se aburren, necesitan matar el tiempo",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Bebamos!",
@@ -598,7 +1052,6 @@
         },
         {
             "text": "Navegas directo a un remolino",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Lanzar algunos marineros para aplacar al Dios del viento",
@@ -631,7 +1084,6 @@
         },
         {
             "text": "Una ola gigante se ha llevado parte de tu tripulacion",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Oh! No!",
@@ -646,7 +1098,6 @@
         },
         {
             "text": "Una tormenta ha roto parte de tu barco",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Oh! No!",
@@ -662,8 +1113,8 @@
     ],
     "conditionalEvents": [
         {
+            "type": 4,
             "text": "Tu tripulacion tiene hambre y padece de escorbuto",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Hacerles comer madera",
@@ -695,8 +1146,8 @@
             ]
         },
         {
+            "type": 6,
             "text": "Tu tripulacion se amotina",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Decir: Ha sido culpa de el",
@@ -732,8 +1183,8 @@
             ]
         },
         {
+            "type": 7,
             "text": "El barco empieza a hundirse!!!",
-            "appearanceProbability": 1,
             "answers": [
                 {
                     "text": "Ordenar a la tripulacion achicar agua",

@@ -13,10 +13,14 @@ public class EventAnswer
     public Balance[] balances;
 }
 
+public class LowResourceEvent : Event
+{
+	public ResourceType type;
+}
+
 public class Event 
 {
 	public String text;
-	public float appearanceProbability;
 
 	public EventAnswer[] answers;
 }

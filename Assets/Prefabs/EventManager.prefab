@@ -55,14 +55,10 @@ MonoBehaviour:
   hudManager: {fileID: 0}
   resourceManager: {fileID: 0}
   secondsBetweenEvents: 5
+  foodLostInEveryEvent: 1
   badEventsProbability: 65
   battleEventsProbability: 10
-  normalEventsBetweenFatalEvents: 3
-  foodLostInEveryEvent: 1
-  happinessThreshold: 20
-  buoyancyThreshold: 20
-  foodThreshold: 20
-  fatalEventsToLose: 3
+  warningEventsThresholds: 000000000000000000000000000000001400000000000000140000001400000000000000
 --- !u!114 &114541968976838306
 MonoBehaviour:
   m_ObjectHideFlags: 1
