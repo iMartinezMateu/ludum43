@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance = null;
 
-	public string currentLang = "en";
 	public float musicVolume, effectVolume;
 
 	void Awake() {

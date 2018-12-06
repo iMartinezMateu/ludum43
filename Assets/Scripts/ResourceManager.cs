@@ -16,9 +16,7 @@ public enum ResourceType {
 
 public class ResourceManager : MonoBehaviour {
 	public HUDManager hudManager;
-    public ParticleManager particleManager;
 	public EventManager eventManager;
-	public GameLangManager gameLangManager;
 
 	[SerializeField]
 	private int booty = 0;
@@ -70,10 +68,6 @@ public class ResourceManager : MonoBehaviour {
 			return booty;
 		}
 		set {
-            if (value < booty)
-                particleManager.PlayParticle(0, -1);
-            else if (value > booty)
-                particleManager.PlayParticle(0, 1);
             booty = value;
             
             if (booty < 0) booty = 0;
@@ -86,14 +80,11 @@ public class ResourceManager : MonoBehaviour {
 			return pieces;
 		}
 		set {
-            if (value < pieces)
-                particleManager.PlayParticle(3, -1);
-            else if (value > pieces)
-                particleManager.PlayParticle(3, 1);
-
             pieces = value;
+
             if (pieces < 0) pieces = 0;
 			else if (pieces > 999) pieces = 999;
+
 			UpdateBuoyancy ();
 		}
 	}
@@ -103,14 +94,11 @@ public class ResourceManager : MonoBehaviour {
 			return crew;
 		}
 		set {
-            if (value < crew)
-                particleManager.PlayParticle(5, -1);
-            else if (value > crew)
-                particleManager.PlayParticle(5, 1);
-
             crew = value;
+
             if (crew < 0) crew = 0;
 			else if (crew > 999) crew = 999;
+
 			UpdateHappiness ();
 			UpdateBuoyancy ();
 			UpdatePower ();
@@ -122,15 +110,11 @@ public class ResourceManager : MonoBehaviour {
 			return rum;
 		}
 		set {
-            if (value < rum)
-                particleManager.PlayParticle(2, -1);
-            else if (value > rum)
-                particleManager.PlayParticle(2, 1);
-
             rum = value;
 
             if (rum < 0) rum = 0;
 			else if (rum > 999) rum = 999;
+
 			UpdateHappiness ();
 		}
 	}
@@ -140,15 +124,10 @@ public class ResourceManager : MonoBehaviour {
 			return food;
 		}
 		set {
-            if (value < food)
-                particleManager.PlayParticle(1, -1);
-            else if (value > food)
-                particleManager.PlayParticle(1, 1);
-
             food = value;
 
 			if (food < eventManager.warningEventsThresholds[(int)ResourceType.FOOD]){
-				Log.instance.ShowMessage(gameLangManager.GetTextByCode("NO_FOOD"));
+				Log.instance.ShowMessage(GameLangManager.instance.GetTextByCode("NO_FOOD"));
 			}
 
             if (food < 0) food = 0;
@@ -162,11 +141,6 @@ public class ResourceManager : MonoBehaviour {
 			return guns;
 		}
 		set {
-            if (value < guns)
-                particleManager.PlayParticle(4, -1);
-            else if (value > guns)
-                particleManager.PlayParticle(4, 1);
-
             guns = value;
 
             if (guns < 0) guns = 0;
@@ -222,7 +196,7 @@ public class ResourceManager : MonoBehaviour {
 		happiness = (int)((float)((float)(food * foodMultiplier + rum * rumMultiplier) / (float)(crew * crewMultiplier + food * foodMultiplier + rum * rumMultiplier))*100);
 		
 		if (happiness < eventManager.warningEventsThresholds[(int)ResourceType.HAPPINESS]){
-			Log.instance.ShowMessage(gameLangManager.GetTextByCode("CREW_NOT_HAPPY"));
+			Log.instance.ShowMessage(GameLangManager.instance.GetTextByCode("CREW_NOT_HAPPY"));
 		}
 
 		GameObject.FindObjectOfType<HUDManager>().SetHappinessValue(happiness);
@@ -235,7 +209,7 @@ public class ResourceManager : MonoBehaviour {
 		buoyancy = (int)((float)((float)(pieces * piecesMultiplier) / (float)(pieces * piecesMultiplier + crew * crewMultiplier + guns * gunMultiplier))*100);
 		
 		if (buoyancy < eventManager.warningEventsThresholds[(int)ResourceType.BUOYANCY]){
-			Log.instance.ShowMessage(gameLangManager.GetTextByCode("SHIP_DAMAGED"));
+			Log.instance.ShowMessage(GameLangManager.instance.GetTextByCode("SHIP_DAMAGED"));
 		}
 		
 		GameObject.FindObjectOfType<Ship>().RefreshStat((float)buoyancy/100);

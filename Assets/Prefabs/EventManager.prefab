@@ -54,10 +54,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hudManager: {fileID: 0}
   resourceManager: {fileID: 0}
+  particleManager: {fileID: 0}
   secondsBetweenEvents: 5
-  foodLostInEveryEvent: 1
+  noRepeatThreshold: 0.2
   badEventsProbability: 65
   battleEventsProbability: 10
+  foodLostInEveryEvent: 1
   warningEventsThresholds: 000000000000000000000000000000001400000000000000140000001400000000000000
 --- !u!114 &114541968976838306
 MonoBehaviour:

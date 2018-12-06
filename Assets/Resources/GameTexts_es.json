@@ -1,0 +1,42 @@
+{
+    "translations": [
+        {"START": "Iniciar"},
+        {"OPTIONS": "Opciones"},
+        {"CREDITS": "Creditos"},
+        {"CHANGE_LANGUAGE": "Cambiar idioma"},
+
+        {"HOW_TO_PLAY": "Como jugar"},
+        {"TAP_CLICK_INSTRUCTION": "Toca o haz click en una opcion cuando el evento aparezca."},
+        {"YOUR_GOAL_INSTRUCTION": "Tu mision es obtener el mayor tesoro posible antes de quedarte sin recursos."},
+        {"CREW_NEEDS_INSTRUCTION": "Tu tripulacion necesita comida y ron o se amotinaran."},
+        {"BE_CAREFUL_INSTRUCTION": "Cuidado, si te quedas sin algun recurso... te pueden pasar cosas horribles."},
+        {"CREW_BATTLES_INSTRUCTION": "A veces tendras que luchar contra otras tripulaciones, necesitaras cañones."},
+        {"ARRR_ANSWERS_INSTRUCTION": "Las respuetas Arrrr dan oro extra pero perderas parte de tus recusos escasos."},
+        {"HISTORY_TEXT": "Arrr marinero! Estás a punto de embarcarte en la mayor historia que nunca habrías imaginado.\nProvienes de una larga estirpe de famosos piratas y debes hacer sonar tu nombre en los 7 mares.\nLa tarea de un buen capitán no es solo beber mucho ron, gritar a la mar y disparar tus cañones a las gaviotas. ¡Debes controlar la felicidad de tu tripulación, equipar tu barco con los mejores cañones, dotarlo de la madera más resistente, llenar tus reservas de la comidas más lujosas y guardar el ron bajo llave!\n\nLa comunidad de piratas confía en ti.\nEste es tu momento de gloria y no olvides que un ARRRR puede salvarrrrte la vida.\n\nFirmado: Rey de los piratas."},
+       
+        {"MUSIC_VOLUME": "Volumen de la musica"},
+        {"EFFECTS_VOLUME": "Volumen de los efectos"},
+
+		{"CREW_NOT_HAPPY": "Capitan, tu tripulacion no esta feliz!"},
+		{"SHIP_DAMAGED": "Capitan, tu barco esta dañado, estais apunto de naufragar!"},
+		{"NO_FOOD": "Capitan, no podeis vivir sin comida!"},
+		{"RAGE_POINTS": "Puntos de furia"},
+		{"NEED_MORE_WOOD": "Necesitamos mas madera para mantenernos a flote"},
+		{"YOU_WON": "Has ganado!"},
+		{"YOU_LOSE": "Has perdido!"},
+		{"PIRATE_BATTLE": "Batalla de piratas!!"},
+		{"YOUR_POWER": "Tu poder: "},
+		{"ENEMY_POWER": "Poder enemigo: "},
+        
+        {"FOOD": "Comdia"},
+        {"GOLD": "Oro"},
+        {"RUM": "Ron"},
+        {"WOOD": "Madera"},
+        {"CANNON": "Cañones"},
+        {"CREW": "Tripulacion"},
+
+        {"LOSE_MESSAGE": "Intenta mantener altas tus reservas de comida y ron, la felicidad de tu tripulacion depende de ello, tambien debes mantener alta la madera para que tu barco no se hunda. Seguro que la proxima vez lo harás mejor. \nFirmado:  Rey de los Piratas\nPD: No olvideis decir ARRRR!"},
+        {"ENTER_NAME": "Tu nombre, grumete"},
+        {"RESTART": "Reiniciar"}
+    ]
+}

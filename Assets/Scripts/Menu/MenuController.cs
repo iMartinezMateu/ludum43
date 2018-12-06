@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-	public Sprite[] langImages;
 	public Image langButton;
 
 	public Slider effectVolume;
@@ -24,8 +23,8 @@ public class MenuController : MonoBehaviour
 	void Start ()
 	{		
 		AudioManager.instance.PlaySong();
-		effectVolume.value = PlayerPrefs.GetFloat("EffectsVolume",0.5f);
-		musicVolume.value = PlayerPrefs.GetFloat("MusicVolume",0.5f);
+		effectVolume.value = PlayerPrefs.GetFloat("EffectsVolume", 0.5f);
+		musicVolume.value = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
 	}
 	
 	// Update is called once per frame
@@ -43,17 +42,13 @@ public class MenuController : MonoBehaviour
 		GameManager.instance.effectVolume = n;
 		PlayerPrefs.SetFloat("EffectsVolume",n);
 		PlayerPrefs.Save();
-		
 	}
 
 	public void ToggleLang(){
-		if (GameManager.instance.currentLang == "en"){
-			GameManager.instance.currentLang = "es";
-			langButton.sprite = langImages[1];
-		} else {
-			GameManager.instance.currentLang = "en";
-			langButton.sprite = langImages[0];
-		}
+		GameLangManager.instance.NextCurrentLanguage();
+		
+		langButton.sprite = Resources.Load<Sprite>("flag_"+GameLangManager.instance.GetCurrentLanguage());
+
 		this.GetComponent<MenuLangController>().RefreshMenuLang();
 	}
 

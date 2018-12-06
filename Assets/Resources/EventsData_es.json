@@ -1,7 +1,7 @@
 {
     "goodEvents": [
 		{
-            "text": "Has vivido el acontecimiento del titanic delante de ti",
+            "text": "El hundimiento del titanic esta ocurriendo ante ti",
             "answers": [
                 {
                     "text": "Salvar a Jack y reclutar a los supervivientes",
@@ -169,7 +169,7 @@
                     ]
                 },
                 {
-                    "text": "Arañar un poco la cubierta",
+                    "text": "Coger un poco de la cubierta y salir a toda vela",
                     "balances": [
                         {
                             "type": 0,
@@ -210,7 +210,7 @@
                     ]
                 },
                 {
-                    "text": "Dejar que vuestros más viejos marineros se unan a ellos",
+                    "text": "Dejar que vuestros mas viejos marineros se unan a ellos",
                     "balances": [
                         {
                             "type": 2,
@@ -221,7 +221,7 @@
             ]
         },
 		{
-            "text": "Sin daros cuenta, os encontráis en el artico. Vuestro contramaestre os pregunta que hacer.",
+            "text": "Sin daros cuenta, os encontrais en el artico. Vuestro contramaestre os pregunta que hacer.",
             "answers": [
                 {
                     "text": "Cazar unas cuantas ballenas",

@@ -1,0 +1,42 @@
+{
+    "translations": [
+        {"START": "Start"},
+        {"OPTIONS": "Options"},
+        {"CREDITS": "Credits"},
+        {"CHANGE_LANGUAGE": "Change language"},
+
+        {"HOW_TO_PLAY": "How to play"},
+        {"TAP_CLICK_INSTRUCTION": "Tap or click one option when the events spawn."},
+        {"YOUR_GOAL_INSTRUCTION": "Your goal is to get the biggest treasure you can before you run out of resources."},
+        {"CREW_NEEDS_INSTRUCTION": "Your crew needs food and rum or they will riot against you."},
+        {"BE_CAREFUL_INSTRUCTION": "Be careful, if you run out of any resource... bad things can happen to you."},
+        {"CREW_BATTLES_INSTRUCTION": "Sometimes you have to fight another crews, you will need some cannons."},
+        {"ARRR_ANSWERS_INSTRUCTION": "Arrrr answers give you extra gold but also takes your most valued resources."},
+        {"HISTORY_TEXT": "Welcome pirate, you're about to embark on the biggest story you've ever had.\nYou come from a long line of famous pirates and you should sound your name in the 7 seas.\nThe task of a good captain is not only: drink a lot of rum, shout to the sea and shoot your cannons to seagulls. \nYou must control the happiness of your crew, equip your boat with the best guns, equip it with the toughest wood you can see, fill your reserves of the most luxurious food you have and keep the rum under lock and key.\n\nThe pirate community trusts you. This is your moment of glory and do not forget that an ARR.\nIt can sarrrrve your life.\n\nSigned: King of the pirates."},
+       
+        {"MUSIC_VOLUME": "Music volume"},
+        {"EFFECTS_VOLUME": "Effects volume"},
+        
+		{"CREW_NOT_HAPPY": "Your crew aren't happy captain!!"},
+		{"SHIP_DAMAGED": "Captain, your ship seems damaged, you are about to sink!!"},
+		{"NO_FOOD": "You can't subsist without food!!"},
+		{"RAGE_POINTS": "Rage points"},
+		{"NEED_MORE_WOOD": "We need more wood t' keep this afloat"},
+		{"YOU_WON": "You won!"},
+		{"YOU_LOSE": "You lose!"},
+		{"PIRATE_BATTLE": "Pirate Battle!!"},
+		{"YOUR_POWER": "Your power: "},
+        {"ENEMY_POWER": "Enemy power: "},
+        
+        {"FOOD": "Food"},
+        {"GOLD": "Gold"},
+        {"RUM": "Rum"},
+        {"WOOD": "Wood"},
+        {"CANNON": "Cannon"},
+        {"CREW": "Crew"},
+
+        {"LOSE_MESSAGE": "Try to take care with your food reserves, happiness of your crew and your bouyancy. You could be able to become a better pirate. \nSigned:  King of pirates\nPD: Don't forget to say ARRRR!"},
+        {"ENTER_NAME": "Your name, rookie pirate"},
+        {"RESTART": "Restart"}
+    ]
+}

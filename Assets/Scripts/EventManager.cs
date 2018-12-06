@@ -2,13 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using LitJson;
-using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class EventManager : MonoBehaviour {
 	public HUDManager hudManager;
 	public ResourceManager resourceManager;
+    public ParticleManager particleManager;
 
 	private EventLists events;
 	private Event currentEvent;
@@ -19,19 +19,19 @@ public class EventManager : MonoBehaviour {
 	[NonSerialized]
 	public int arrrrCounter;
 
-	[Header("General event properties")]
+	[Header("Event properties")]
 	[SerializeField]
 	private int secondsBetweenEvents;
-
-	[Header("Food Properties")]
 	[SerializeField]
-	private int foodLostInEveryEvent;
-
-	[Header("Event probabilities")]
+	private float noRepeatThreshold;
 	[SerializeField]
 	private int badEventsProbability;
     [SerializeField]
     private int battleEventsProbability;
+
+	[Header("Food Properties")]
+	[SerializeField]
+	private int foodLostInEveryEvent;
 
 	[Header("WarningEvents")]
 	[SerializeField]
@@ -40,7 +40,7 @@ public class EventManager : MonoBehaviour {
 	public bool[] warningEventsTriggered;
 
 	void Start () {
-		events = JsonMapper.ToObject<EventLists> (Resources.Load<TextAsset> ("EventsData_"+GameManager.instance.currentLang).text);
+		events = JsonMapper.ToObject<EventLists> (Resources.Load<TextAsset> ("EventsData_"+GameLangManager.instance.GetCurrentLanguage()).text);
 
 		warningEventsTriggered = new bool[warningEventsThresholds.Length];
 		for (int i = 0; i < warningEventsTriggered.Length; i++){
@@ -89,6 +89,7 @@ public class EventManager : MonoBehaviour {
 
 		if (options.Count == negativeCount){
 			GameObject.FindObjectOfType<HUDManager>().ShowDead();
+			Debug.Log("Has perdido");
 			return;
 		}
 
@@ -112,16 +113,28 @@ public class EventManager : MonoBehaviour {
 			}
 		}
 
+		int badEventThreshold = badEventsProbability+battleEventsProbability;
 		int type = Random.Range (0, 100);
-		if (type < badEventsProbability) {
-			int index = Random.Range (0, events.badEvents.Length);
-			return events.badEvents[index];
-		} else if (type > badEventsProbability+battleEventsProbability) {
-			int index = Random.Range (0, events.goodEvents.Length);
-			return events.goodEvents[index];
-		} else {
+		if (type < battleEventsProbability){
 			return GameObject.FindObjectOfType<Battle>().Fight();
-
+		} else if (type > battleEventsProbability && type < badEventThreshold){
+			int index = Random.Range (0, events.badEvents.Length);
+			float eventSpawnRatio = (float)events.badEvents[index].spawnCounter / (float)eventCounter;
+			while (eventSpawnRatio > noRepeatThreshold) {
+				index = Random.Range (0, events.badEvents.Length);
+				eventSpawnRatio = (float)events.badEvents[index].spawnCounter / (float)eventCounter;
+			}
+			events.badEvents[index].spawnCounter++;
+			return events.badEvents[index];
+		} else {
+			int index = Random.Range (0, events.goodEvents.Length);
+			float eventSpawnRatio = (float)events.badEvents[index].spawnCounter / (float)eventCounter;
+			while (eventSpawnRatio > noRepeatThreshold) {
+				index = Random.Range (0, events.badEvents.Length);
+				eventSpawnRatio = (float)events.badEvents[index].spawnCounter / (float)eventCounter;
+			}
+			events.goodEvents[index].spawnCounter++;
+			return events.goodEvents[index];
 		}
 	}
 
@@ -154,26 +167,57 @@ public class EventManager : MonoBehaviour {
 		foreach (Balance balance in currentEvent.answers[n].balances) {
 			switch (balance.type) {
 				case ResourceType.RUM:
+					if (balance.quantity < 0)
+						particleManager.PlayParticle(2, -1);
+					else
+						particleManager.PlayParticle(2, 1);
+
 					resourceManager.Rum += balance.quantity;
 					hudManager.SetValue (ResourceType.RUM, resourceManager.Rum);
 					break;
 				case ResourceType.CREW:
+					if (balance.quantity < 0)
+						particleManager.PlayParticle(5, -1);
+					else
+						particleManager.PlayParticle(5, 1);
+
 					resourceManager.Crew += balance.quantity;
 					hudManager.SetValue (ResourceType.CREW, resourceManager.Crew);
 					break;
 				case ResourceType.FOOD:
+					if (balance.quantity < 0)
+						particleManager.PlayParticle(1, -1);
+					else
+						particleManager.PlayParticle(1, 1);
+
 					resourceManager.Food += balance.quantity;
 					hudManager.SetValue (ResourceType.FOOD, resourceManager.Food);
 					break;
 				case ResourceType.GUNS:
+					if (balance.quantity < 0)
+						particleManager.PlayParticle(4, -1);
+					else
+						particleManager.PlayParticle(4, 1);
+
 					resourceManager.Guns += balance.quantity;
 					hudManager.SetValue (ResourceType.GUNS, resourceManager.Guns);
 					break;
 				case ResourceType.BOOTY:
+					if (balance.quantity < 0)
+						particleManager.PlayParticle(0, -1);
+					else
+						particleManager.PlayParticle(0, 1);
+
 					resourceManager.Booty += balance.quantity;
+					
 					hudManager.SetValue (ResourceType.BOOTY, resourceManager.Booty);
 					break;
 				case ResourceType.PIECES:
+					if (balance.quantity < 0)
+						particleManager.PlayParticle(3, -1);
+					else
+						particleManager.PlayParticle(3, 1);
+
 					resourceManager.Pieces += balance.quantity;
 					hudManager.SetValue (ResourceType.PIECES, resourceManager.Pieces);
 					break;

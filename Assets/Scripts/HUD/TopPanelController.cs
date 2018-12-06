@@ -7,19 +7,6 @@ using UnityEngine.EventSystems; //required for Event data
 
 
 public class TopPanelController : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler {
-
-	[SerializeField]
-	private GameObject goldImage;
-	[SerializeField]
-	private GameObject foodImage;
-	[SerializeField]
-	private GameObject rumImage;
-	[SerializeField]
-	private GameObject woodImage;
-	[SerializeField]
-	private GameObject cannonImage;
-	[SerializeField]
-	private GameObject crewImage;
 	
 	[SerializeField]
 	private TextMeshProUGUI goldText;
@@ -39,7 +26,9 @@ public class TopPanelController : MonoBehaviour,IPointerEnterHandler, IPointerEx
 	[SerializeField]
 	private Sprite[] happinessStates;
 	
-	GameObject currentHover;
+	[SerializeField]
+	private GameObject tooltipContainer;
+	private GameObject currentHover;
 
 	
 	#region Unity Methods
@@ -53,21 +42,11 @@ public class TopPanelController : MonoBehaviour,IPointerEnterHandler, IPointerEx
 	void Update () {
 		if (currentHover != null)
 		{
-			goldImage.SetActive(true);
-			foodImage.SetActive(true);
-			rumImage.SetActive(true);
-			woodImage.SetActive(true);
-			cannonImage.SetActive(true);
-			crewImage.SetActive(true);
+			tooltipContainer.SetActive(true);
 		}
 		else
 		{
-			goldImage.SetActive(false);
-			foodImage.SetActive(false);
-			rumImage.SetActive(false);
-			woodImage.SetActive(false);
-			cannonImage.SetActive(false);
-			crewImage.SetActive(false);
+			tooltipContainer.SetActive(false);
 		}
 	}
 
